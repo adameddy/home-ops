@@ -1,0 +1,16 @@
+# Trash
+.DS_Store
+Thumbs.db
+# k8s
+kubeconfig
+.decrypted~*.yaml
+.config.env
+*.agekey
+*.pub
+*.key
+# Terraform
+*.tfvars
+.terraform.tfstate.lock*
+.terraform/
+authorized_keys
+terraform.tfstate*
