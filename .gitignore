@@ -3,9 +3,7 @@
 Thumbs.db
 # k8s
 kubeconfig
-.decrypted~*.yaml
 .config.env
-*.agekey
 *.pub
 *.key
 # Terraform
@@ -14,3 +12,7 @@ kubeconfig
 .terraform/
 authorized_keys
 terraform.tfstate*
+# SOPS
+.env
+.decrypted~*.yaml
+*.agekey
