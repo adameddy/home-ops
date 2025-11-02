@@ -5,7 +5,6 @@ Thumbs.db
 kubeconfig
 .config.env
 *.pub
-*.key
 # Terraform
 *.tfvars
 .terraform.tfstate.lock*
@@ -16,3 +15,4 @@ terraform.tfstate*
 .env
 .decrypted~*.yaml
 *.agekey
+*.key

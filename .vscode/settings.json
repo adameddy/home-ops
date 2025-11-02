@@ -1,0 +1,22 @@
+{
+  "files.associations": {
+    "*.json5": "jsonc",
+    "**/terraform/**/*.tf": "terraform"
+  },
+  "yaml.schemas": {
+    "Kubernetes": "**/kubernetes/*.yaml"
+  },
+  "sops.defaults.ageKeyFile": "age.key",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.hover.delay": 1000,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "yaml.customTags": [
+    "!secret scalar",
+    "!env_var scalar"
+  ],
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+  }
+}
