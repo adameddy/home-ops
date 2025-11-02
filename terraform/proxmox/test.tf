@@ -13,10 +13,14 @@ resource "proxmox_vm_qemu" "talos" {
     for_each = local.talos_nodes
 
     agent = 0
-    cores = 2
     memory = 1024
     name = each.key
     target_node = each.value.target_node
+
+    cpu {
+        type = "host"
+        cores = 2
+        }
 
     disks {
         ide {
