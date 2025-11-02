@@ -1,8 +1,16 @@
 ---
 creation_rules:
-  - path_regex: .*.yaml
-    encrypted_regex: ^(data|stringData)$
-    age: age1q882ftwgq474uj460we3g2rhws3ygas9mw5qfpe6azsfk75v4dcsygywux
+  - path_regex: cluster/.*\.ya?ml
+    encrypted_regex: "^(data|stringData)$"
+    mac_only_encrypted: true
+    key_groups:
+      - age:
+          - age17wezhckaqyhyxud66fq5ckra06h3837p4uzqemymn9cjspq9eshq0eyf0z
+  - path_regex: terraform/.*\.sops\.ya?ml
+    unencrypted_regex: "^(kind)$"
+    key_groups:
+      - age:
+          - age17wezhckaqyhyxud66fq5ckra06h3837p4uzqemymn9cjspq9eshq0eyf0z
 stores:
   yaml:
     indent: 2
