@@ -26,7 +26,7 @@ resource "proxmox_vm_qemu" "talos" {
         ide {
             ide2 {
                 cdrom {
-                    iso = "nocloud-amd64.iso"
+                    iso = "local:iso/nocloud-amd64.iso"
                 }
             }
         }
