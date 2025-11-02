@@ -9,7 +9,7 @@ locals {
     }
 }
 
-resource "proxmox_vm_qemu" "resource-name" {
+resource "proxmox_vm_qemu" "talos" {
     for_each = local.talos_nodes
 
     agent = 0
@@ -26,18 +26,20 @@ resource "proxmox_vm_qemu" "resource-name" {
                 }
             }
         }
-    }
 
-    scsi {
-        scsi0 {
-            disk {
-                size = "10G"
-                storage = "local-zfs"
+        scsi {
+            scsi0 {
+                disk {
+                    size = "10G"
+                    storage = "local-zfs"
+                }
             }
         }
     }
 
     network {
         bridge = "vmbr0"
+        model = "virtio"
+        id = 0
     }
 }
