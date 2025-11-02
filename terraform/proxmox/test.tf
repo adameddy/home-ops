@@ -1,36 +1,43 @@
-resource "proxmox_vm_qemu" "test" {
-    target_node = "pve-prod-1"
-    desc = "Cloudinit Ubuntu"
-    count = 1
-    onboot = false
+locals {
+    talos_nodes = {
+        "talos-01" = {
+            target_node = "pve-prod-1"
+        },
+        "talos-02" = {
+            target_node = "pve-prod-2"
+        },
+    }
+}
 
-    # The template name to clone this vm from
-    clone = "23.04-non-KVM"
+resource "proxmox_vm_qemu" "resource-name" {
+    for_each = local.talos_nodes
 
-    # Activate QEMU agent for this VM
     agent = 0
-
-    os_type = "cloud-init"
     cores = 2
-    sockets = 2
-    numa = true
-    vcpus = 0
-    cpu = "host"
-    memory = 4096
-    name = "k3s-master-0${count.index + 1}"
-
-    cloudinit_cdrom_storage = "nvme"
-    scsihw   = "virtio-scsi-single" 
-    bootdisk = "scsi0"
+    memory = 1024
+    name = each.key
+    target_node = each.value.target_node
 
     disks {
-        scsi {
-            scsi0 {
-                disk {
-                  storage = "nvme"
-                  size = 12
+        ide {
+            ide2 {
+                cdrom {
+                    iso = "nocloud-amd64.iso"
                 }
             }
         }
+    }
+
+    scsi {
+        scsi0 {
+            disk {
+                size = "10G"
+                storage = "local-zfs"
+            }
+        }
+    }
+
+    network {
+        bridge = "vmbr0"
     }
 }
