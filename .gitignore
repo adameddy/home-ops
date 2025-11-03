@@ -1,18 +1,41 @@
 # Trash
 .DS_Store
 Thumbs.db
-# k8s
-kubeconfig
+
+# Kubernetes/Talos configs
+**/kubeconfig*
+**/talosconfig*
+*.kubeconfig
 .config.env
 *.pub
+
 # Terraform
+**.tfstate
+**.tfstate.*
 *.tfvars
 .terraform.tfstate.lock*
+.terraform.lock.hcl
 .terraform/
 authorized_keys
-terraform.tfstate*
+*.tfplan
+
 # SOPS
 .env
 .decrypted~*.yaml
 *.agekey
+
+# Certificates
+*.crt
+*.cer
 *.key
+*.p12
+*.pfx
+
+# Backup files
+*.backup
+*.old
+*.bak
+*~
+
+# Logs
+*.log
