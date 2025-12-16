@@ -1,17 +1,20 @@
 # https://registry.terraform.io/providers/bpg/proxmox/0.62.0/docs/resources/virtual_environment_vm
-resource "proxmox_virtual_environment_vm" "talos" {
-  for_each = { for vm in local.talos_nodes : vm.ip => vm }
+resource "proxmox_virtual_environment_vm" "controllers" {
+
+  for_each = { for node in local.controller_nodes : node.ip_address => node }
 
   name            = each.value.name
   node_name       = each.value.target_node
-  vm_id           = local.vm_starting_vmid + index(local.talos_nodes, each.value)
+  vm_id           = each.value.vm_id
   machine         = "q35"
   scsi_hardware   = "virtio-scsi-single"
-  boot_order      = ["virtio0", "ide2"]
+  boot_order      = ["scsi0"]
   stop_on_destroy = true
 
   agent {
     enabled = true
+    trim = true
+    timeout = "3m"
   }
 
   operating_system {
@@ -20,25 +23,23 @@ resource "proxmox_virtual_environment_vm" "talos" {
 
   cpu {
     type  = "host"
-    cores = try(each.value.cores, 1)
+    cores = each.value.cores
     numa  = true
   }
 
   memory {
-    dedicated = try(each.value.memory, 1024)
-  }
-
-  cdrom {
-    interface = "ide2"
-    file_id   = "local:iso/nocloud-amd64.iso"
+    dedicated = each.value.memory
   }
 
   disk {
     datastore_id = "local-zfs"
-    interface    = "virtio0"
+    interface    = "scsi0"
+    iothread     = true
     ssd          = true
     discard      = "on"
-    size         = try(each.value.disk_size, "10")
+    size         = each.value.disk_size
+    file_format  = "raw"
+    file_id      = "proxmox-nfs:iso/${each.value.image}"
   }
 
   dynamic "network_device" {
@@ -50,9 +51,12 @@ resource "proxmox_virtual_environment_vm" "talos" {
   }
 
   initialization {
+    datastore_id = "local-zfs"
+    interface    = "scsi1"
+
     ip_config {
       ipv4 {
-        address = "${each.value.ip}/${local.network_subnet}"
+        address = "${each.value.ip_address}/${local.network_subnet}"
         gateway = local.network_gateway
       }
     }

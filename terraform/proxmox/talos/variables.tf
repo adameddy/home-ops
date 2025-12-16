@@ -1,24 +1,45 @@
-locals {
-  vm_starting_vmid = 6000
-  network_gateway  = "10.0.0.1"
-  network_subnet   = "24"
+variable "cluster_name" {
+  description = "A name to provide for the Talos cluster"
+  type        = string
+  default     = "homelab"
+}
 
-  talos_nodes = [
-    {
-      name        = "talos-01"
-      target_node = "pve-prod-1"
-      ip          = "10.0.0.120"
-      memory      = 1024
-      cores       = 2
-      disk_size   = 10
-    },
-    {
-      name        = "talos-02"
-      target_node = "pve-prod-2"
-      ip          = "10.0.0.121"
-      memory      = 1024
-      cores       = 2
-      disk_size   = 10
-    }
-  ]
+variable "cluster_vip" {
+  description = "The VIP for the management of the Talos cluster"
+  type        = string
+  default     = "10.0.0.160"
+}
+
+variable "cluster_endpoint" {
+  description = "The k8s api-server (VIP) endpoint"
+  type        = string
+  default     = "https://10.0.0.160:6443"
+}
+
+variable "cluster_node_network" {
+  description = "The IP network prefix of the cluster nodes"
+  type        = string
+  default     = "10.0.0.0/24"
+}
+
+
+variable "pod_subnets" {
+  description = "Pod network CIDR ranges"
+  type        = list(string)
+  default     = ["10.244.0.0/16"]
+}
+
+variable "service_subnets" {
+  description = "Service network CIDR ranges"
+  type        = list(string)
+  default     = ["10.96.0.0/12"]
+}
+
+variable "talos_version" {
+  type    = string
+  default = "1.11.5"
+  validation {
+    condition     = can(regex("^\\d+(\\.\\d+)+", var.talos_version))
+    error_message = "Must be a version number."
+  }
 }
