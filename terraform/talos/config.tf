@@ -98,3 +98,14 @@ resource "talos_cluster_kubeconfig" "kubeconfig" {
   endpoint             = local.controller_nodes[0].ip_address
   node                 = local.controller_nodes[0].ip_address
 }
+
+# Save configs in tmp
+resource "local_file" "kubeconfig" {
+  content  = resource.talos_cluster_kubeconfig.kubeconfig.kubeconfig_raw
+  filename = "../../tmp/kubeconfig"
+}
+
+resource "local_file" "talosconfig" {
+  content  = data.talos_client_configuration.talosconfig.talos_config
+  filename = "../../tmp/talosconfig"
+}

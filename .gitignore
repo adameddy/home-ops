@@ -39,3 +39,6 @@ authorized_keys
 
 # Logs
 *.log
+
+# Temp
+**/tmp

@@ -7,7 +7,7 @@ locals {
       target_node = "pve-dev-1"
       vm_id       = 161
       ip_address  = "10.0.0.161"
-      memory      = 4096
+      memory      = 4 * 1024
       cores       = 2
       disk_size   = 10
       image       = "talos-${var.talos_version}-nocloud-amd64.img"
@@ -17,7 +17,7 @@ locals {
       target_node = "pve-dev-1"
       vm_id       = 162
       ip_address  = "10.0.0.162"
-      memory      = 4096
+      memory      = 4 * 1024
       cores       = 2
       disk_size   = 10
       image       = "talos-${var.talos_version}-nocloud-amd64.img"
@@ -31,7 +31,7 @@ locals {
       target_node = "pve-dev-1"
       vm_id       = 171
       ip_address  = "10.0.0.171"
-      memory      = 4096
+      memory      = 6 * 1024
       cores       = 2
       disk_size   = 10
       image       = "talos-${var.talos_version}-nocloud-amd64.img"
@@ -41,7 +41,7 @@ locals {
       target_node = "pve-dev-1"
       vm_id       = 172
       ip_address  = "10.0.0.172"
-      memory      = 4096
+      memory      = 6 * 1024
       cores       = 2
       disk_size   = 10
       image       = "talos-${var.talos_version}-nocloud-amd64.img"
