@@ -27,10 +27,10 @@ locals {
           # Ignore all folders, but include the ones with cluster resources
           /*
           # Cluster folders include
-          !/kubernetes/core
+          !/kubernetes/flux
           !/kubernetes/apps/
           # Remove flux-system as well
-          kubernetes/core/flux-system/
+          kubernetes/flux/flux-system/
           EOF
       }
     }
@@ -38,7 +38,7 @@ locals {
       spec = {
         prune = true
         force = true
-        path  = "./kubernetes/core/"
+        path  = "./kubernetes/flux"
       }
     }
   }
