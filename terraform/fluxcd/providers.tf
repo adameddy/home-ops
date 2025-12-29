@@ -31,6 +31,6 @@ provider "kubernetes" {
   config_path = "../../tmp/kubeconfig"
 }
 
-data "sops_file" "flux_git_credentials" {
+data "sops_file" "flux_secrets" {
   source_file = "secrets.sops.yaml"
 }

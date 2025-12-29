@@ -61,8 +61,22 @@ resource "kubernetes_secret_v1" "flux_git_credentials" {
   type = "Opaque"
 
   data = {
-    "username" = data.sops_file.flux_git_credentials.data["flux_git_user"]
-    "password" = data.sops_file.flux_git_credentials.data["flux_git_token"]
+    "username" = data.sops_file.flux_secrets.data["flux_git_user"]
+    "password" = data.sops_file.flux_secrets.data["flux_git_token"]
+  }
+}
+
+resource "kubernetes_secret_v1" "sops_age" {
+  depends_on = [kubernetes_namespace_v1.flux_system]
+  metadata {
+    name      = "sops-age"
+    namespace = kubernetes_namespace_v1.flux_system.metadata[0].name
+  }
+
+  type = "Opaque"
+
+  data = {
+    "identity.agekey" = data.sops_file.flux_secrets.data["agekey"]
   }
 }
 
