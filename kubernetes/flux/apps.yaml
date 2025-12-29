@@ -17,6 +17,7 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
+      namespace: flux-system
   postBuild:
     substitute: {}
     substituteFrom:
@@ -35,6 +36,7 @@ spec:
             provider: sops
             secretRef:
               name: sops-age
+              namespace: flux-system
           postBuild:
             substituteFrom:
               - kind: Secret
