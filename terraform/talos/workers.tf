@@ -50,6 +50,14 @@ resource "proxmox_virtual_environment_vm" "workers" {
     }
   }
 
+  dynamic "hostpci" {
+    for_each = each.value.hostpci_devices
+    content {
+      device = hostpci.value.device
+      mapping = hostpci.value.mapping
+    }
+  }
+
   initialization {
     datastore_id = "local-zfs"
     interface    = "scsi1"

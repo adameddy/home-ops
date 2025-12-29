@@ -21,30 +21,58 @@ locals {
       cores       = 2
       disk_size   = 10
       image       = "talos-${var.talos_version}-nocloud-amd64.img"
+    },
+    {
+      name        = "talos-controller-03"
+      target_node = "pve-prod-3"
+      vm_id       = 163
+      ip_address  = "10.0.0.163"
+      memory      = 4 * 1024
+      cores       = 2
+      disk_size   = 10
+      image       = "talos-${var.talos_version}-nocloud-amd64.img"
     }
   ]
 
   # Worker Nodes
   worker_nodes = [
     {
-      name        = "talos-worker-01"
-      target_node = "pve-dev-1"
-      vm_id       = 171
-      ip_address  = "10.0.0.171"
-      memory      = 6 * 1024
-      cores       = 2
-      disk_size   = 10
-      image       = "talos-${var.talos_version}-nocloud-amd64.img"
+      name            = "talos-worker-01"
+      target_node     = "pve-dev-1"
+      vm_id           = 171
+      ip_address      = "10.0.0.171"
+      memory          = 6 * 1024
+      cores           = 2
+      disk_size       = 10
+      image           = "talos-${var.talos_version}-nocloud-amd64.img"
+      hostpci_devices = []
     },
     {
-      name        = "talos-worker-02"
-      target_node = "pve-dev-1"
-      vm_id       = 172
-      ip_address  = "10.0.0.172"
+      name            = "talos-worker-02"
+      target_node     = "pve-dev-1"
+      vm_id           = 172
+      ip_address      = "10.0.0.172"
+      memory          = 6 * 1024
+      cores           = 2
+      disk_size       = 10
+      image           = "talos-${var.talos_version}-nocloud-amd64.img"
+      hostpci_devices = []
+    },
+    {
+      name        = "talos-worker-03"
+      target_node = "pve-prod-3"
+      vm_id       = 173
+      ip_address  = "10.0.0.173"
       memory      = 6 * 1024
       cores       = 2
       disk_size   = 10
       image       = "talos-${var.talos_version}-nocloud-amd64.img"
+      hostpci_devices = [
+        {
+          device = "hostpci0"
+          mapping = "igpu"
+        }
+      ]
     }
   ]
 

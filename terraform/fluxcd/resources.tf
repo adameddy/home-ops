@@ -29,6 +29,7 @@ locals {
           # Cluster folders include
           !/kubernetes/flux
           !/kubernetes/apps/
+          !/kubernetes/core/
           # Remove flux-system as well
           kubernetes/flux/flux-system/
           EOF
