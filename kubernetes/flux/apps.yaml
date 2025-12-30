@@ -35,9 +35,10 @@ spec:
           name: not-used
         spec:
           decryption:
-            provider: sops-test
+            provider: sops
             secretRef:
-              name: sops-age-test
+              name: sops-age
+              namespace: flux-system
           postBuild:
             substituteFrom:
               - kind: Secret
