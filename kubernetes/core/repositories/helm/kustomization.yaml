@@ -4,4 +4,5 @@ kind: Kustomization
 resources:
   - intel-charts.yaml
   - jetstack.yaml
+  - longhorn.yaml
   - node-feature-discovery.yaml

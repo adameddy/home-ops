@@ -42,6 +42,17 @@ resource "proxmox_virtual_environment_vm" "workers" {
     file_id      = "proxmox-nfs:iso/${each.value.image}"
   }
 
+  dynamic "disk" {
+    for_each = each.value.add_longhorn_disk ? [1] : []
+    content {
+      datastore_id = "longhorn"
+      interface    = "scsi2"
+      ssd          = true
+      size         = 900
+      backup       = false
+    }
+  }
+
   dynamic "network_device" {
     for_each = [1]
     content {
@@ -53,7 +64,7 @@ resource "proxmox_virtual_environment_vm" "workers" {
   dynamic "hostpci" {
     for_each = each.value.hostpci_devices
     content {
-      device = hostpci.value.device
+      device  = hostpci.value.device
       mapping = hostpci.value.mapping
     }
   }

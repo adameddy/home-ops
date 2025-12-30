@@ -16,7 +16,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-    namespace: flux-system
   timeout: 5m
   wait: true
 ---
@@ -37,6 +36,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-    namespace: flux-system
   timeout: 5m
   wait: true
