@@ -9,9 +9,6 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  dependsOn:
-    - name: node-feature-discovery
-      namespace: kube-system
   interval: 30m
   path: ./kubernetes/apps/kube-system/intel-device-plugin/app
   prune: true
@@ -33,9 +30,6 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  dependsOn:
-    - name: intel-device-plugin-operator
-      namespace: kube-system
   interval: 30m
   path: ./kubernetes/apps/kube-system/intel-device-plugin/gpu
   prune: true
