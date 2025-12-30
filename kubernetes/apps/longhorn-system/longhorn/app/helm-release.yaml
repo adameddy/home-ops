@@ -13,7 +13,6 @@ spec:
         kind: HelmRepository
         name: longhorn
         namespace: flux-system
-  maxHistory: 2
   install:
     remediation:
       retries: 3
@@ -21,10 +20,13 @@ spec:
     cleanupOnFail: true
     remediation:
       retries: 3
-      strategy: rollback
   values:
     persistence:
+      defaultClass: true
+      defaultFsType: ext4
+      defaultClassReplicaCount: 2
       defaultDataLocality: best-effort
+      reclaimPolicy: Delete
     defaultSettings:
       defaultDataLocality: best-effort
       defaultReplicaCount: 2
@@ -33,3 +35,9 @@ spec:
       defaultLonghornStaticStorageClass: longhorn
       createDefaultDiskLabeledNodes: true
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
+    longhornUI:
+      replicas: 1
+    ingress:
+      enabled: true
+      ingressClassName: internal
+      host: longhorn.local
