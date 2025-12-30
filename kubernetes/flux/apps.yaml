@@ -15,9 +15,9 @@ spec:
   prune: true
   wait: true
   decryption:
-    provider: sops_test
+    provider: sops
     secretRef:
-      name: sops-age_test
+      name: sops-age
   postBuild:
     substitute: {}
     substituteFrom:
@@ -35,9 +35,9 @@ spec:
           name: not-used
         spec:
           decryption:
-            provider: sops
+            provider: sops-test
             secretRef:
-              name: sops-age
+              name: sops-age-test
           postBuild:
             substituteFrom:
               - kind: Secret
