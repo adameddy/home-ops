@@ -14,38 +14,38 @@ spec:
   path: ./kubernetes/apps
   prune: true
   wait: true
-  # decryption:
-  #   provider: sops
-  #   secretRef:
-  #     name: sops-age
-  # postBuild:
-  #   substitute: {}
-  #   substituteFrom:
-  #     - kind: ConfigMap
-  #       name: cluster-settings
-  #       optional: true
-  #     - kind: Secret
-  #       name: cluster-secrets
-  #       optional: true
-  # patches:
-  #   - patch: |-
-  #       apiVersion: kustomize.toolkit.fluxcd.io/v1
-  #       kind: Kustomization
-  #       metadata:
-  #         name: not-used
-  #       spec:
-  #         decryption:
-  #           provider: sops
-  #           secretRef:
-  #             name: sops-age
-  #         postBuild:
-  #           substituteFrom:
-  #             - kind: Secret
-  #               name: cluster-secrets
-  #               optional: true
-  #             - kind: ConfigMap
-  #               name: cluster-settings
-  #               optional: true
-  #     target:
-  #       group: kustomize.toolkit.fluxcd.io
-  #       kind: Kustomization
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
+  postBuild:
+    substitute: {}
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-settings
+        optional: true
+      - kind: Secret
+        name: cluster-secrets
+        optional: true
+  patches:
+    - patch: |-
+        apiVersion: kustomize.toolkit.fluxcd.io/v1
+        kind: Kustomization
+        metadata:
+          name: not-used
+        spec:
+          decryption:
+            provider: sops
+            secretRef:
+              name: sops-age
+          postBuild:
+            substituteFrom:
+              - kind: Secret
+                name: cluster-secrets
+                optional: true
+              - kind: ConfigMap
+                name: cluster-settings
+                optional: true
+      target:
+        group: kustomize.toolkit.fluxcd.io
+        kind: Kustomization
