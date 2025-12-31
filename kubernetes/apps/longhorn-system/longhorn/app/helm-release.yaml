@@ -40,4 +40,4 @@ spec:
     ingress:
       enabled: true
       ingressClassName: internal
-      host: longhorn.local
+      host: longhorn.local.dev
