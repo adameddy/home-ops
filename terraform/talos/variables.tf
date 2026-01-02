@@ -37,7 +37,7 @@ variable "service_subnets" {
 
 variable "talos_version" {
   type    = string
-  default = "1.11.5"
+  default = "1.12.0"
   validation {
     condition     = can(regex("^\\d+(\\.\\d+)+", var.talos_version))
     error_message = "Must be a version number."

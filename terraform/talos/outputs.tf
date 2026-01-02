@@ -15,3 +15,7 @@ output "controllers" {
 output "workers" {
   value = join(",", [for node in local.worker_nodes : node.ip_address])
 }
+
+output "schematic_id" {
+  value = jsondecode(data.http.talos_factory_schematic_id.response_body)["id"]
+}
