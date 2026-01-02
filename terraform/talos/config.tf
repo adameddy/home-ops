@@ -60,6 +60,14 @@ data "talos_machine_configuration" "worker" {
           serviceSubnets = var.service_subnets
         }
       }
+      machine = {
+        kernel = {
+          modules = [
+            { name = "nbd" },
+            { name = "iscsi_tcp" },
+          ]
+        }
+      }
     })
   ]
 }
