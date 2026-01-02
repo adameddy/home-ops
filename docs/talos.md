@@ -11,6 +11,8 @@ $ talosctl dashboard --nodes 10.0.0.161
 
 ## upgrade talos
 
+important note: currently this nukes any longhorn volume attached to the vm
+
 1. change the version in the variables file
 2. pull new image (tofu apply)
 3. change image version for each node (locals file) one at a time
