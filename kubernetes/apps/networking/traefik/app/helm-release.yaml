@@ -13,14 +13,6 @@ spec:
         name: traefik
         namespace: flux-system
       interval: 6h
-  install:
-    crds: CreateReplace
-    remediation:
-      retries: 3
-  upgrade:
-    crds: CreateReplace
-    remediation:
-      retries: 3
   values:
     ports:
       web:
