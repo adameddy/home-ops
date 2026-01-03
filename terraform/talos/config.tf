@@ -63,8 +63,8 @@ data "talos_machine_configuration" "worker" {
       machine = {
         kernel = {
           modules = [
-            { name = "nbd" },
-            { name = "iscsi_tcp" },
+            { name = "nbd" },       # used for longhorn
+            { name = "iscsi_tcp" }, # used for longhorn
           ]
         }
       }

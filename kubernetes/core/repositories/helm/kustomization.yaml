@@ -6,3 +6,4 @@ resources:
   - jetstack.yaml
   - longhorn.yaml
   - node-feature-discovery.yaml
+  - traefik.yaml
