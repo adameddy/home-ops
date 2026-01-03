@@ -37,7 +37,3 @@ spec:
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
     longhornUI:
       replicas: 1
-    ingress:
-      enabled: true
-      ingressClassName: internal
-      host: longhorn.local.dev
