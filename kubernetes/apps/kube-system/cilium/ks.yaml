@@ -16,5 +16,27 @@ spec:
   interval: 30m
   retryInterval: 1m
   prune: true
-  wait: false
+  wait: true
+  timeout: 5m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: &app cilium-resources
+  namespace: flux-system
+spec:
+  targetNamespace: kube-system
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  path: ./kubernetes/apps/kube-system/cilium/resources
+  dependsOn:
+    - name: cilium
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  interval: 30m
+  retryInterval: 1m
+  prune: true
+  wait: true
   timeout: 5m
