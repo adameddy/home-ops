@@ -6,13 +6,8 @@ metadata:
   namespace: longhorn-system
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
-    traefik.ingress.kubernetes.io/auth-type: basic
-    traefik.ingress.kubernetes.io/ssl-redirect: 'false'
-    traefik.ingress.kubernetes.io/auth-secret: basic-auth
-    traefik.ingress.kubernetes.io/auth-realm: 'Authentication Required '
-    traefik.ingress.kubernetes.io/proxy-body-size: 10000m
 spec:
-  ingressClassName: traefik
+  ingressClassName: internal
   rules:
     - host: lh.${DOMAIN}
       http:
