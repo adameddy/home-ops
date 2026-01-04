@@ -20,9 +20,21 @@ data "talos_machine_configuration" "controller" {
         network = {
           podSubnets     = var.pod_subnets
           serviceSubnets = var.service_subnets
+          cni = {
+            name = "none"
+          }
+        }
+        proxy = {
+          disabled = true
         }
       }
       machine = {
+        features = {
+          kubePrism = {
+            enabled = true
+            port    = 7445
+          }
+        }
         kubelet = {
           nodeIP = {
             validSubnets = [var.cluster_node_network]
@@ -58,9 +70,21 @@ data "talos_machine_configuration" "worker" {
         network = {
           podSubnets     = var.pod_subnets
           serviceSubnets = var.service_subnets
+          cni = {
+            name = "none"
+          }
+        }
+        proxy = {
+          disabled = true
         }
       }
       machine = {
+        features = {
+          kubePrism = {
+            enabled = true
+            port    = 7445
+          }
+        }
         kernel = {
           modules = [
             { name = "nbd" },       # used for longhorn
