@@ -3,6 +3,8 @@ cgroup:
   automount:
     enabled: false
   hostRoot: /sys/fs/cgroup
+gatewayAPI:
+  enabled: true
 hubble:
   enabled: false
 routingMode: "native"
