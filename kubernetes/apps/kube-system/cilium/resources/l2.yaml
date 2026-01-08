@@ -5,6 +5,6 @@ metadata:
   name: l2-policy
 spec:
   loadBalancerIPs: true
-  serviceSelector:
+  nodeSelector:
     matchLabels:
-      cilium.l2.announce: "true"
+      kubernetes.io/os: linux
