@@ -7,4 +7,5 @@ resources:
   - intel-charts.yaml
   - jetstack.yaml
   - longhorn.yaml
+  - metrics-server.yaml
   - node-feature-discovery.yaml
