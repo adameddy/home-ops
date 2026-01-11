@@ -9,3 +9,4 @@ resources:
   - longhorn.yaml
   - metrics-server.yaml
   - node-feature-discovery.yaml
+  - postfinance.yaml
