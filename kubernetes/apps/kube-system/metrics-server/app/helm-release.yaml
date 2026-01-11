@@ -14,11 +14,9 @@ spec:
         name: metrics-server
         namespace: flux-system
   install:
-    crds: CreateReplace
     remediation:
       retries: 3
   upgrade:
-    crds: CreateReplace
     cleanupOnFail: true
     remediation:
       retries: 3
@@ -28,6 +26,7 @@ spec:
       - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
       - --kubelet-use-node-status-port
       - --metric-resolution=15s
+      - --kubelet-request-timeout=2s
     metrics:
       enabled: true
     serviceMonitor:
