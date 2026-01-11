@@ -36,6 +36,7 @@ spec:
       defaultLonghornStaticStorageClass: longhorn
       createDefaultDiskLabeledNodes: true
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
+      storageReservedPercentageForDefaultDisk: 2
     longhornUI:
       replicas: 1
     ingress:

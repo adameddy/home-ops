@@ -65,7 +65,6 @@ data "talos_machine_configuration" "worker" {
   machine_type     = "worker"
   machine_secrets  = talos_machine_secrets.machine_secrets.machine_secrets
   config_patches = [
-    yamlencode(yamldecode(file("./patches/longhorn-volume.yaml"))),
     yamlencode({
       cluster = {
         network = {
@@ -80,16 +79,6 @@ data "talos_machine_configuration" "worker" {
         }
       }
       machine = {
-        kubelet = {
-          extraMounts = [
-            {
-              destination = "/var/mnt/longhorn"
-              type = "bind"
-              source = "/var/mnt/longhorn"
-              options = ["bind", "rshared", "rw"]
-            }
-          ]
-        }
         features = {
           kubePrism = {
             enabled = true
@@ -105,6 +94,30 @@ data "talos_machine_configuration" "worker" {
       }
     })
   ]
+}
+
+# Config patches for worker nodes using longhorn
+locals {
+  longhorn_volume = yamlencode(yamldecode(file("./patches/longhorn-volume.yaml")))
+  longhorn_extraMounts = yamlencode(
+    {
+      machine = {
+        kubelet = {
+          extraMounts = [
+            {
+              destination = "/var/mnt/longhorn"
+              type        = "bind"
+              source      = "/var/mnt/longhorn"
+              options     = ["bind", "rshared", "rw"]
+            }
+          ]
+        }
+        nodeLabels = {
+          "node.longhorn.io/create-default-disk" = "true"
+        }
+      }
+    }
+  )
 }
 
 # Apply control plane nodes machine configuration
@@ -125,6 +138,10 @@ resource "talos_machine_configuration_apply" "worker_config_apply" {
   machine_configuration_input = data.talos_machine_configuration.worker.machine_configuration
   endpoint                    = local.worker_nodes[count.index].ip_address
   node                        = local.worker_nodes[count.index].ip_address
+  config_patches = [
+    local.worker_nodes[count.index].add_longhorn_disk ? local.longhorn_volume : "",
+    local.worker_nodes[count.index].add_longhorn_disk ? local.longhorn_extraMounts : ""
+  ]
 }
 
 # Bootstrap the cluster
