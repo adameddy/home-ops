@@ -65,6 +65,7 @@ data "talos_machine_configuration" "worker" {
   machine_type     = "worker"
   machine_secrets  = talos_machine_secrets.machine_secrets.machine_secrets
   config_patches = [
+    yamlencode(yamldecode(file("./patches/longhorn-volume.yaml"))),
     yamlencode({
       cluster = {
         network = {
@@ -79,6 +80,16 @@ data "talos_machine_configuration" "worker" {
         }
       }
       machine = {
+        kubelet = {
+          extraMounts = [
+            {
+              destination = "/var/mnt/longhorn"
+              type = "bind"
+              source = "/var/mnt/longhorn"
+              options = ["bind", "rshared", "rw"]
+            }
+          ]
+        }
         features = {
           kubePrism = {
             enabled = true

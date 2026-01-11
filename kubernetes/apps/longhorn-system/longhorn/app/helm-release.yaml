@@ -28,6 +28,7 @@ spec:
       defaultDataLocality: best-effort
       reclaimPolicy: Delete
     defaultSettings:
+      defaultDataPath: "/var/mnt/longhorn"
       defaultDataLocality: best-effort
       defaultReplicaCount: 2
       orphanAutoDeletion: true
