@@ -15,7 +15,7 @@ spec:
         namespace: flux-system
   install:
     remediation:
-      retries: -1
+      retries: 3
   upgrade:
     cleanupOnFail: true
     remediation:
@@ -47,7 +47,7 @@ spec:
               JELLYFIN_FFmpeg__analyzeduration: 50000000
             probes:
               liveness: &probes
-                enabled: true
+                enabled: false
                 custom: true
                 spec:
                   httpGet:
@@ -59,10 +59,7 @@ spec:
                   failureThreshold: 3
               readiness: *probes
               startup:
-                enabled: true
-                spec:
-                  failureThreshold: 30
-                  periodSeconds: 10
+                enabled: false
             securityContext:
               allowPrivilegeEscalation: false
               readOnlyRootFilesystem: true
