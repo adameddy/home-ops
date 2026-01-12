@@ -27,9 +27,9 @@ spec:
         intel.feature.node.kubernetes.io/gpu: "true"
       securityContext:
         runAsNonRoot: true
-        runAsUser: 568
-        runAsGroup: 568
-        fsGroup: 568
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
         fsGroupChangePolicy: OnRootMismatch
         # 44 = video, 105 = kvm, 109 = render (for GPU access), 10000 = media
         supplementalGroups: [44, 105, 109, 10000]
