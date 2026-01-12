@@ -19,7 +19,7 @@ locals {
       target_node = "pve-prod-2"
       vm_id       = 162
       ip_address  = "10.0.0.162"
-      memory      = 4 * 1024
+      memory      = 6 * 1024
       cores       = 2
       disk_size   = 10
       image       = "talos-1.12.0-nocloud-amd64.img"
@@ -29,7 +29,7 @@ locals {
       target_node = "pve-prod-3"
       vm_id       = 163
       ip_address  = "10.0.0.163"
-      memory      = 4 * 1024
+      memory      = 6 * 1024
       cores       = 2
       disk_size   = 10
       image       = "talos-1.12.0-nocloud-amd64.img"
@@ -55,8 +55,8 @@ locals {
       target_node       = "pve-prod-2"
       vm_id             = 172
       ip_address        = "10.0.0.172"
-      memory            = 6 * 1024
-      cores             = 2
+      memory            = 24 * 1024
+      cores             = 12
       disk_size         = 10
       image             = "talos-1.12.0-nocloud-amd64.img"
       add_longhorn_disk = false
@@ -67,8 +67,8 @@ locals {
       target_node       = "pve-prod-3"
       vm_id             = 173
       ip_address        = "10.0.0.173"
-      memory            = 6 * 1024
-      cores             = 2
+      memory            = 24 * 1024
+      cores             = 12
       disk_size         = 10
       image             = "talos-1.12.0-nocloud-amd64.img"
       add_longhorn_disk = true
