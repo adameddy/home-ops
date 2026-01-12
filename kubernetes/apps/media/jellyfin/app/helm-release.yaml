@@ -88,7 +88,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: *app
+        existingClaim: ${*app}-config
         globalMounts:
           - path: /config
       tmpfs:
