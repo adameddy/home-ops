@@ -33,6 +33,7 @@ spec:
         fsGroupChangePolicy: OnRootMismatch
         # 44 = video, 105 = kvm, 109 = render (for GPU access), 10000 = media
         supplementalGroups: [44, 105, 109, 10000]
+        seccompProfile: { type: RuntimeDefault }
     controllers:
       jellyfin:
         containers:
@@ -60,6 +61,10 @@ spec:
               readiness: *probes
               startup:
                 enabled: false
+            securityContext:
+              allowPrivilegeEscalation: false
+              readOnlyRootFilesystem: true
+              capabilities: {drop: ["ALL"]}
             resources:
               requests:
                 gpu.intel.com/i915: 1
