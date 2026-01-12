@@ -18,6 +18,17 @@ spec:
       strategy: rollback
       retries: 3
   values:
+    defaultPodOptions:
+      nodeSelector:
+        intel.feature.node.kubernetes.io/gpu: "true"
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: OnRootMismatch
+        # 44 = video, 105 = kvm, 109 = render (for GPU access), 10000 = media
+        supplementalGroups: [44, 105, 109, 10000]
     controllers:
       jellyfin:
         containers:
@@ -60,17 +71,6 @@ spec:
               limits:
                 gpu.intel.com/i915: 1
                 memory: 4Gi
-        defaultPodOptions:
-          nodeSelector:
-            intel.feature.node.kubernetes.io/gpu: "true"
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 568
-            runAsGroup: 568
-            fsGroup: 568
-            fsGroupChangePolicy: OnRootMismatch
-            # 44 = video, 105 = kvm, 109 = render (for GPU access), 10000 = media
-            supplementalGroups: [44, 105, 109, 10000]
     service:
       app:
         controller: *app
