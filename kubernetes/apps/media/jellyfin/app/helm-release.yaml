@@ -4,37 +4,13 @@ kind: HelmRelease
 metadata:
   name: &app jellyfin
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 4.6.0
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
-  install:
-    remediation:
-      retries: 3
-  upgrade:
-    cleanupOnFail: true
-    remediation:
-      strategy: rollback
-      retries: 3
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+  interval: 1h
   values:
     controllers:
       jellyfin:
-        pod:
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 568
-            runAsGroup: 568
-            fsGroup: 568
-            fsGroupChangePolicy: OnRootMismatch
-            seccompProfile: { type: RuntimeDefault }
-            supplementalGroups: [44, 109, 992, 10000]
-          nodeSelector:
-            intel.feature.node.kubernetes.io/gpu: "true"
         containers:
           app:
             image:
@@ -42,13 +18,12 @@ spec:
               tag: 10.11.5@sha256:cd7e4cb71812dd76988a725da615e37c6d0d24c200be904ad5d183e51f1dc6ed
             env:
               TZ: ${TIMEZONE}
-            securityContext:
-              allowPrivilegeEscalation: false
-              readOnlyRootFilesystem: true
-              capabilities: { drop: ["ALL"] }
+              DOTNET_SYSTEM_IO_DISABLEFILELOCKING: "true"
+              JELLYFIN_FFmpeg__probesize: 50000000
+              JELLYFIN_FFmpeg__analyzeduration: 50000000
             probes:
               liveness: &probes
-                enabled: false
+                enabled: true
                 custom: true
                 spec:
                   httpGet:
@@ -59,6 +34,15 @@ spec:
                   timeoutSeconds: 1
                   failureThreshold: 3
               readiness: *probes
+              startup:
+                enabled: true
+                spec:
+                  failureThreshold: 30
+                  periodSeconds: 10
+            securityContext:
+              allowPrivilegeEscalation: false
+              readOnlyRootFilesystem: true
+              capabilities: {drop: ["ALL"]}
             resources:
               requests:
                 gpu.intel.com/i915: 1
@@ -66,54 +50,44 @@ spec:
                 memory: 1Gi
               limits:
                 gpu.intel.com/i915: 1
-                memory: 8Gi
+                memory: 4Gi
+        pod:
+          nodeSelector:
+            intel.feature.node.kubernetes.io/gpu: "true"
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 568
+            runAsGroup: 568
+            fsGroup: 568
+            fsGroupChangePolicy: OnRootMismatch
     service:
       app:
         controller: *app
+        type: ClusterIP
         ports:
           http:
             port: *port
-        type: ClusterIP
     route:
       app:
-        hostnames:
-          - "jellyfin.dev.${DOMAIN}"
+        hostnames: ["jellyfin.dev.${DOMAIN}"]
         parentRefs:
           - name: internal
             namespace: kube-system
-            sectionName: http
-        rules:
-          - backendRefs:
-              - identifier: app
-                port: 80
+            sectionName: https
     persistence:
       config:
         enabled: true
-        type: emptyDir
+        existingClaim: *app
+        globalMounts:
+          - path: /config
       tmpfs:
-        enabled: true
         type: emptyDir
-        globalMounts:
-          - path: /tmp
-      transcode:
-        enabled: true
-        type: emptyDir
-        globalMounts:
-          - path: /transcode
-      cache:
-        enabled: true
-        type: emptyDir
-        globalMounts:
-          - path: /cache
-      movies:
-        type: nfs
-        server: ${FS1_IP}
-        path: ${MOVIES_PATH}
-        globalMounts:
-          - path: /movies
-      tv-shows:
-        type: nfs
-        server: ${FS1_IP}
-        path: ${TVSHOWS_PATH}
-        globalMounts:
-          - path: /tv-shows
+        advancedMounts:
+          jellyfin:
+            app:
+              - path: /cache
+                subPath: cache
+              - path: /config/log
+                subPath: log
+              - path: /tmp
+                subPath: tmp
