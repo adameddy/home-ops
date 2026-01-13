@@ -60,7 +60,12 @@ locals {
       disk_size         = 50
       image             = "talos-1.12.0-nocloud-amd64.img"
       add_longhorn_disk = false
-      hostpci_devices   = []
+      hostpci_devices   = [
+        {
+          device  = "hostpci0"
+          mapping = "usb-host-controller"
+        }
+      ]
     },
     {
       name              = "talos-worker-03"
@@ -69,7 +74,7 @@ locals {
       ip_address        = "10.0.0.173"
       memory            = 24 * 1024
       cores             = 12
-      disk_size         = 50
+      disk_size         = 200
       image             = "talos-1.12.0-nocloud-amd64.img"
       add_longhorn_disk = true
       hostpci_devices = [
