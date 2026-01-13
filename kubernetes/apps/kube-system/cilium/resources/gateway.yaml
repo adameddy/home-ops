@@ -21,3 +21,7 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
+      tls:
+        certificateRefs:
+          - kind: Secret
+            name: ${DOMAIN/./-}-production-tls
