@@ -10,6 +10,7 @@ configMapGenerator:
       - ./resources/custom.css
       - ./resources/docker.yaml
       - ./resources/kubernetes.yaml
+      - ./resources/proxmox.yaml
       - ./resources/services.yaml
       - ./resources/settings.yaml
       - ./resources/widgets.yaml
