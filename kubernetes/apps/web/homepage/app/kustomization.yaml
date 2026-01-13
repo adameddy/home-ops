@@ -8,6 +8,7 @@ configMapGenerator:
     files:
       - ./resources/bookmarks.yaml
       - ./resources/custom.css
+      - ./resources/custom.js
       - ./resources/docker.yaml
       - ./resources/kubernetes.yaml
       - ./resources/proxmox.yaml
