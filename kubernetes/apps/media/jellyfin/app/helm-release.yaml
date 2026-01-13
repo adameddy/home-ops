@@ -78,7 +78,7 @@ spec:
             port: *port
     route:
       app:
-        hostnames: ["jellyfin.${DOMAIN}"]
+        hostnames: ["jellyfin.dev.${DOMAIN}"]
         parentRefs:
           - name: internal
             namespace: kube-system

@@ -10,7 +10,7 @@ spec:
       namespace: kube-system
       sectionName: https
   hostnames:
-    - "longhorn.${DOMAIN}"
+    - "longhorn.dev.${DOMAIN}"
   rules:
     - backendRefs:
         - name: longhorn-frontend

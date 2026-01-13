@@ -43,7 +43,7 @@ service:
 route:
   app:
     hostnames:
-      - "nginx.${DOMAIN}"
+      - "nginx.dev.${DOMAIN}"
     parentRefs:
       - name: internal
         namespace: kube-system
