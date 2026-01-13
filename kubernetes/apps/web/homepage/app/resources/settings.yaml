@@ -1,0 +1,21 @@
+---
+title: Ravenholm
+favicon: https://github.com/adameddy/ravenholm/blob/main/cluster/apps/web/homepage/app/resources/favicon.png?raw=true
+theme: dark
+color: slate
+headerStyle: clean
+hideVersion: true
+disableCollapse: true
+layout:
+  Media:
+    style: row
+    columns: 4
+  Home:
+    style: row
+    columns: 4
+  Utilities:
+    style: row
+    columns: 4
+  Infrastructure:
+    style: row
+    columns: 4

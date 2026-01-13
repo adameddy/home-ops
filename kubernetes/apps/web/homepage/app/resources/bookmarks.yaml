@@ -1,0 +1,14 @@
+---
+- Resources:
+    - github:
+        - icon: github.png
+          href: 'https://github.com/adameddy'
+    - kubesearch:
+        - icon: kubernetes-dashboard.png
+          href: 'https://kubesearch.dev/'
+    - k8s-at-home:
+        - icon: github.png
+          href: 'https://github.com/topics/k8s-at-home'
+    - bjw-s-docs:
+        - icon: github.png
+          href: 'https://bjw-s-labs.github.io/helm-charts/docs/'
