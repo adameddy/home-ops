@@ -85,7 +85,6 @@ spec:
             sectionName: https
     persistence:
       config:
-        enabled: true
         existingClaim: *app
         globalMounts:
           - path: /config
@@ -100,3 +99,15 @@ spec:
                 subPath: log
               - path: /tmp
                 subPath: tmp
+      movies:
+        type: nfs
+        server: ${FS1_IP}
+        path: ${MOVIES_PATH}
+        globalMounts:
+          - path: /movies
+      tv-shows:
+        type: nfs
+        server: ${FS1_IP}
+        path: ${TVSHOWS_PATH}
+        globalMounts:
+          - path: /tv-shows
