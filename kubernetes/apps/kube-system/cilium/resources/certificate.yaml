@@ -9,4 +9,4 @@ spec:
     name: letsencrypt-production
     kind: ClusterIssuer
   commonName: "${DOMAIN}"
-  dnsNames: ["${DOMAIN}", "*.${DOMAIN}"]
+  dnsNames: ["${DOMAIN}", "*.${DOMAIN}", "*.dev.${DOMAIN}"]
