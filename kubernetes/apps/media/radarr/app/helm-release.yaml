@@ -29,6 +29,10 @@ spec:
               RADARR__SERVER__PORT: &port 7878
               RADARR__LOG__LEVEL: info
 
+            envFrom:
+              - secretRef:
+                  name: radarr-secrets
+
             probes:
               liveness: &probes
                 enabled: true

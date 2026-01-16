@@ -29,6 +29,10 @@ spec:
               SONARR__SERVER__PORT: &port 8989
               SONARR__LOG__LEVEL: info
 
+            envFrom:
+              - secretRef:
+                  name: sonarr-secrets
+
             probes:
               liveness: &probes
                 enabled: true
