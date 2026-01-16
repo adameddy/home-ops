@@ -7,6 +7,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: home
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: longhorn-system
   labels:
     app.kubernetes.io/component: longhorn-system
