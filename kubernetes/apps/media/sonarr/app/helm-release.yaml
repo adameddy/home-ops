@@ -79,7 +79,7 @@ spec:
         hostnames: ["{{ .Release.Name }}.dev.${DOMAIN}"]
         rules:
           - backendRefs:
-              - identifier: *app
+              - name: *app
                 port: *port
 
     persistence:
