@@ -26,6 +26,7 @@ spec:
           - kind: Secret
             name: ${DOMAIN/./-}-production-tls
 ---
+# TODO
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:

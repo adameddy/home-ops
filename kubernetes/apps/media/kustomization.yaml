@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./jellyfin/ks.yaml
   - ./metube/ks.yaml
+  - ./sonarr/ks.yaml
