@@ -10,7 +10,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/media/jellyseer/app/
+  path: ./kubernetes/apps/media/jellyseerr/app/
   sourceRef:
     kind: GitRepository
     name: flux-system

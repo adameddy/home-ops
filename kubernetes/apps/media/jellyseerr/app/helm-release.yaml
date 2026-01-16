@@ -86,7 +86,7 @@ spec:
       tmpfs:
         type: emptyDir
         advancedMounts:
-          jellyseerr:
+          *app :
             app:
               - path: /app/config/logs
                 subPath: logs
