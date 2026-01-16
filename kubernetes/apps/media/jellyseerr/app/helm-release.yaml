@@ -24,10 +24,6 @@ spec:
               LOG_LEVEL: info
               PORT: &port 5055
 
-            envFrom:
-              - secretRef:
-                  name: jellyseerr-secrets
-
             probes:
               liveness: &probes
                 enabled: true
