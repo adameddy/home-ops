@@ -92,6 +92,12 @@
       description: Usenet Downloader
       siteMonitor: http://sabnzbd.media.svc.cluster.local:8080
       statusStyle: "dot"
+  - MeTube:
+      href: https://metube.ravenholm.io
+      icon: metube.png
+      description: YouTube Downloader
+      siteMonitor: http://metube.media.svc.cluster.local:8081
+      statusStyle: "dot"
 - Infrastructure:
   - Proxmox:
       href: https://10.0.0.30:8006
