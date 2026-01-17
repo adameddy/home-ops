@@ -87,3 +87,10 @@ spec:
         existingClaim: "{{ .Release.Name }}"
         globalMounts:
           - path: /usr/src/app/store
+
+      usb:
+        enabled: true
+        type: hostPath
+        hostPath: /dev/serial/by-id/usb-Zooz_800_Z-Wave_Stick_533D004242-if00
+        globalMounts:
+          - path: /dev/ttyUSB0
