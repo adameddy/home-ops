@@ -28,8 +28,7 @@ spec:
                 sabnzbd.media.svc,
                 sabnzbd.media.svc.cluster,
                 sabnzbd.media.svc.cluster.local,
-                sabnzbd.${DOMAIN},
-                sabnzbd.dev.${DOMAIN}
+                sabnzbd.${DOMAIN}
 
             probes:
               liveness: &probes
@@ -78,7 +77,7 @@ spec:
           - name: internal
             namespace: kube-system
             sectionName: http
-        hostnames: ["{{ .Release.Name }}.dev.${DOMAIN}"]
+        hostnames: ["{{ .Release.Name }}.${DOMAIN}"]
         rules:
           - backendRefs:
               - name: *app

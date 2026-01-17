@@ -81,7 +81,7 @@ spec:
           - name: internal
             namespace: kube-system
             sectionName: http
-        hostnames: ["{{ .Release.Name }}.dev.${DOMAIN}"]
+        hostnames: ["{{ .Release.Name }}.${DOMAIN}"]
         rules:
           - backendRefs:
               - name: *app

@@ -46,7 +46,7 @@ spec:
             port: 8081
     route:
       app:
-        hostnames: ["metube.dev.${DOMAIN}"]
+        hostnames: ["metube.${DOMAIN}"]
         parentRefs:
           - name: internal
             namespace: kube-system
