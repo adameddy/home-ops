@@ -74,6 +74,8 @@ spec:
     persistence:
       config:
         existingClaim: "{{ .Release.Name }}"
+        globalMounts:
+          - path: /config
 
       tmpfs:
         type: emptyDir
