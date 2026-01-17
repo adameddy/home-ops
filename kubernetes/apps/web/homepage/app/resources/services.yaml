@@ -10,7 +10,7 @@
       icon: navidrome.png
       href: https://navidrome.ravenholm.io
       description: Audio Streaming
-      siteMonitor: http://navidrome.media.svc.cluster.local:4533
+      siteMonitor: http://navidrome.media.svc.cluster.local:8080
       statusStyle: "dot"
   - Radarr:
       icon: radarr.png
@@ -90,6 +90,8 @@
       href: https://sabnzbd.ravenholm.io
       icon: sabnzbd.png
       description: Usenet Downloader
+      siteMonitor: http://sabnzbd.media.svc.cluster.local:8080
+      statusStyle: "dot"
 - Infrastructure:
   - Proxmox:
       href: https://10.0.0.30:8006
@@ -103,6 +105,8 @@
       href: https://longhorn.ravenholm.io
       icon: longhorn.png
       description: Cluster Storage
+      siteMonitor: http://longhorn-frontend.longhorn-system.svc.cluster.local:80
+      statusStyle: "dot"
   - Unifi:
       href: https://10.0.0.1
       icon: unifi.png
