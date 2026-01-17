@@ -2,7 +2,7 @@
 
 <img src="assets/wheezy_logo.png" align="center"  height="250px"/>
 
-# 🚧 Home-Ops using Infrastructure as Code 🚧
+# Home-Ops using Infrastructure as Code
 
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-gray?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)&nbsp;&nbsp;
 [![Proxmox](https://img.shields.io/badge/Proxmox-gray?style=for-the-badge&logo=proxmox&logoColor=white)](https://www.proxmox.com/)&nbsp;&nbsp;
@@ -56,10 +56,8 @@ This repository is my home Kubernetes cluster in a declarative state. [Terraform
 
 #### Networking
 
-- [traefik]()
-- [wg-easy]() - Wireguard VPN
-- [Blocky]() - DNS level ad-blocker
-- [Cloudflare DDNS]()
+- [Cilium]() - Cluster networking solution
+- [Cloudflare DDNS]() - DNS record updater
 
 #### Media
 
@@ -67,28 +65,28 @@ This repository is my home Kubernetes cluster in a declarative state. [Terraform
 - [Jellyseerr]() - Movie & TV Show requester
 - [Sonarr]() - TV Show management
 - [Radarr]() - Movie management
-- [Lidarr]() - Audio management
+- 🚧 [Lidarr]() - Audio management
 - [Prowlarr]() - Index management
-- [Huntarr]() - Media updater
+- 🚧 [Huntarr]() - Media updater
 - [Navidrome]() - Audio streaming
 
 #### Home
 
 - [Home Assistant]() - Home automation dashboard
-- [Frigate]() - Security camera NVR
-- [Mosquitto]() - MQTT broker
-- [NodeRed]() - Automation builder
-- [Z-Wave-JS-UI]() - Z-Wave device management
+- 🚧 [Frigate]() - Security camera NVR
+- 🚧 [Mosquitto]() - MQTT broker
+- 🚧 [NodeRed]() - Automation builder
+- 🚧 [Z-Wave-JS-UI]() - Z-Wave device management
 
 #### Monitoring
 
-- [Grafana]() - Metrics and logging
+- 🚧 [Grafana]() - Metrics and logging
 
 #### AI
 
-- [Openwebui]() - AI Frontend
+- 🚧 [Openwebui]() - AI Frontend
 
 #### Misc
 
-- [nzbGet]() - Usenet download client
+- [SABnzbd]() - Usenet download client
 - [Homepage]() - Home lab dashboard
