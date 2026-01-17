@@ -24,12 +24,12 @@
       description: TV Show Management
       siteMonitor: http://sonarr.media.svc.cluster.local:8989
       statusStyle: "dot"
-  - Lidarr:
-      icon: lidarr.png
-      href: https://lidarr.ravenholm.io
-      description: Audio Management
-      siteMonitor: http://lidarr.media.svc.cluster.local:8686
-      statusStyle: "dot"
+  # - Lidarr:
+  #     icon: lidarr.png
+  #     href: https://lidarr.ravenholm.io
+  #     description: Audio Management
+  #     siteMonitor: http://lidarr.media.svc.cluster.local:8686
+  #     statusStyle: "dot"
   - Prowlarr:
       icon: prowlarr.png
       href: https://prowlarr.ravenholm.io
@@ -42,12 +42,12 @@
       description: Movie & TV Show Requester
       siteMonitor: http://jellyseerr.media.svc.cluster.local:5055
       statusStyle: "dot"
-  - Huntarr:
-      icon: huntarr.png
-      href: https://huntarr.ravenholm.io
-      description: Media Updater
-      siteMonitor: http://huntarr.media.svc.cluster.local:9705
-      statusStyle: "dot"
+  # - Huntarr:
+  #     icon: huntarr.png
+  #     href: https://huntarr.ravenholm.io
+  #     description: Media Updater
+  #     siteMonitor: http://huntarr.media.svc.cluster.local:9705
+  #     statusStyle: "dot"
 - Home:
   - Home Assistant:
         icon: home-assistant.png
@@ -74,21 +74,21 @@
         siteMonitor: http://zwave-js-ui.home.svc.cluster.local:8091
         statusStyle: "dot"
 - Utilities:
-  - Open WebUI:
-      href: https://openwebui.ravenholm.io
-      icon: ollama.png
-      description: AI Chat
-  - Grafana:
-      href: https://grafana.ravenholm.io
-      icon: grafana.png
-      description: Logs & Metrics
-  - MkDocs:
-      href: https://mkdocs.ravenholm.io
-      icon: mkdocs.png
-      description: Notes & Documention
-  - NZBGet:
-      href: https://nzbget.ravenholm.io
-      icon: nzbget.png
+  # - Open WebUI:
+  #     href: https://openwebui.ravenholm.io
+  #     icon: ollama.png
+  #     description: AI Chat
+  # - Grafana:
+  #     href: https://grafana.ravenholm.io
+  #     icon: grafana.png
+  #     description: Logs & Metrics
+  # - MkDocs:
+  #     href: https://mkdocs.ravenholm.io
+  #     icon: mkdocs.png
+  #     description: Notes & Documention
+  - SABnzbd:
+      href: https://sabnzbd.ravenholm.io
+      icon: sabnzbd.png
       description: Usenet Downloader
 - Infrastructure:
   - Proxmox:
@@ -107,7 +107,7 @@
       href: https://10.0.0.1
       icon: unifi.png
       description: Network Management
-  - Wireguard:
-      href: https://wg-easy.ravenholm.io
-      icon: wireguard.png
-      description: VPN Management
+  # - Wireguard:
+  #     href: https://wg-easy.ravenholm.io
+  #     icon: wireguard.png
+  #     description: VPN Management
