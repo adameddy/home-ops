@@ -9,7 +9,7 @@ locals {
       target_node = "pve-prod-1"
       vm_id       = 161
       ip_address  = "10.0.0.161"
-      memory      = 4 * 1024
+      memory      = 6 * 1024
       cores       = 2
       disk_size   = 10
       image       = "talos-1.12.0-nocloud-amd64.img"
@@ -43,12 +43,21 @@ locals {
       target_node       = "pve-prod-1"
       vm_id             = 171
       ip_address        = "10.0.0.171"
-      memory            = 6 * 1024
-      cores             = 2
-      disk_size         = 50
+      memory            = 24 * 1024
+      cores             = 12
+      disk_size         = 200
       image             = "talos-1.12.0-nocloud-amd64.img"
-      add_longhorn_disk = false
-      hostpci_devices   = []
+      add_longhorn_disk = true
+      hostpci_devices   = [
+        {
+          device  = "hostpci0"
+          mapping = "igpu"
+        },
+        {
+          device  = "hostpci1"
+          mapping = "usb-host-controller"
+        }
+      ]
     },
     {
       name              = "talos-worker-02"
@@ -57,9 +66,9 @@ locals {
       ip_address        = "10.0.0.172"
       memory            = 24 * 1024
       cores             = 12
-      disk_size         = 50
+      disk_size         = 200
       image             = "talos-1.12.0-nocloud-amd64.img"
-      add_longhorn_disk = false
+      add_longhorn_disk = true
       hostpci_devices   = [
         {
           device  = "hostpci0"
