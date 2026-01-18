@@ -48,6 +48,12 @@
       description: Book Management
       siteMonitor: http://calibre-web-automated.media.svc.cluster.local:8083
       statusStyle: "dot"
+  - Shelfmark:
+      icon: booklogr.png
+      href: https://shelfmark.ravenholm.io
+      description: Book Management
+      siteMonitor: http://shelfmark.media.svc.cluster.local:8084
+      statusStyle: "dot"
   # - Huntarr:
   #     icon: huntarr.png
   #     href: https://huntarr.ravenholm.io
