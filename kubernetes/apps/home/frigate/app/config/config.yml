@@ -1,0 +1,57 @@
+mqtt:
+  enabled: False
+
+go2rtc:
+  streams:
+      front_door_low_res:
+        - rtsp://admin:4C$3DugQBRPT@10.0.0.205/Preview_01_sub
+      front_door_high_res:
+        - rtsp://admin:4C$3DugQBRPT@10.0.0.205/Preview_01_main
+
+ffmpeg:
+  hwaccel_args: preset-intel-qsv-h264
+
+detectors:
+  coral:
+    type: edgetpu
+    device: usb
+
+detect:
+  enabled: true
+  width: 640
+  height: 480
+  fps: 5
+
+# record:
+#   enabled: true
+#   retain:
+#     days: 14
+#     mode: active_objects
+#   alerts:
+#     retain:
+#       days: 14
+#       mode: active_objects
+#   detections:
+#     retain:
+#       days: 14
+#       mode: active_objects
+
+objects:
+  track:
+    - person
+
+cameras:
+  front_door:
+    enabled: True
+    ffmpeg:
+      inputs:
+        # Low Resolution
+        - path: rtsp://127.0.0.1:8554/front_door_low_res
+          input_args: preset-rtsp-restream
+          roles:
+            - detect
+        # High Resolution
+        - path: rtsp://127.0.0.1:8554/front_door_high_res
+          input_args: preset-rtsp-restream
+          roles:
+            - record
