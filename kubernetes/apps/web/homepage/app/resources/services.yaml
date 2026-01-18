@@ -42,6 +42,12 @@
       description: Movie & TV Show Requester
       siteMonitor: http://jellyseerr.media.svc.cluster.local:5055
       statusStyle: "dot"
+  - Calibre-Web-Automated:
+      icon: calibre-web.png
+      href: https://calibre-web-automated.ravenholm.io
+      description: Book Management
+      siteMonitor: http://calibre-web-automated.media.svc.cluster.local:8083
+      statusStyle: "dot"
   # - Huntarr:
   #     icon: huntarr.png
   #     href: https://huntarr.ravenholm.io
@@ -74,18 +80,6 @@
         siteMonitor: http://zwave-js-ui.home.svc.cluster.local:8091
         statusStyle: "dot"
 - Utilities:
-  # - Open WebUI:
-  #     href: https://openwebui.ravenholm.io
-  #     icon: ollama.png
-  #     description: AI Chat
-  # - Grafana:
-  #     href: https://grafana.ravenholm.io
-  #     icon: grafana.png
-  #     description: Logs & Metrics
-  # - MkDocs:
-  #     href: https://mkdocs.ravenholm.io
-  #     icon: mkdocs.png
-  #     description: Notes & Documention
   - SABnzbd:
       href: https://sabnzbd.ravenholm.io
       icon: sabnzbd.png
@@ -117,7 +111,3 @@
       href: https://10.0.0.1
       icon: unifi.png
       description: Network Management
-  # - Wireguard:
-  #     href: https://wg-easy.ravenholm.io
-  #     icon: wireguard.png
-  #     description: VPN Management
