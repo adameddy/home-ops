@@ -77,9 +77,6 @@ data "talos_machine_configuration" "worker" {
         proxy = {
           disabled = true
         }
-        apiServer = {
-          disablePodSecurityPolicy = true
-        }
       }
       machine = {
         features = {
