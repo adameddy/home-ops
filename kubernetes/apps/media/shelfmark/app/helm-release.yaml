@@ -23,6 +23,7 @@ spec:
               TZ: ${TIMEZONE}
               PORT: &port 8084
               INGEST_DIR: /cwa-book-ingest
+              CALIBRE_WEB_URL: https://calibre-web-automated.${DOMAIN}
 
             probes:
               liveness: &probes
@@ -57,6 +58,7 @@ spec:
         runAsGroup: 1000
         fsGroup: 1000
         fsGroupChangePolicy: OnRootMismatch
+        seccompProfile: { type: RuntimeDefault }
 
     service:
       app:
