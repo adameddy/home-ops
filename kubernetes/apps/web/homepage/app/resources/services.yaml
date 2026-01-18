@@ -51,7 +51,7 @@
   - Shelfmark:
       icon: booklogr.png
       href: https://shelfmark.ravenholm.io
-      description: Book Management
+      description: Book Downloader
       siteMonitor: http://shelfmark.media.svc.cluster.local:8084
       statusStyle: "dot"
   # - Huntarr:
