@@ -22,19 +22,19 @@ detect:
   height: 480
   fps: 5
 
-# record:
-#   enabled: true
-#   retain:
-#     days: 14
-#     mode: active_objects
-#   alerts:
-#     retain:
-#       days: 14
-#       mode: active_objects
-#   detections:
-#     retain:
-#       days: 14
-#       mode: active_objects
+record:
+  enabled: true
+  retain:
+    days: 14
+    mode: active_objects
+  alerts:
+    retain:
+      days: 14
+      mode: active_objects
+  detections:
+    retain:
+      days: 14
+      mode: active_objects
 
 objects:
   track:
