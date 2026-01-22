@@ -9,7 +9,6 @@ data:
   # IP Addresses
   FS1_IP: "10.0.0.10"
   BLOCKY_IP: "10.0.0.153"
-  WG_EASY_IP: "10.0.0.177"
   # Paths
   AUDIO_PATH: "/mnt/zpool1/audio"
   BOOKS_PATH: "/mnt/zpool1/books"

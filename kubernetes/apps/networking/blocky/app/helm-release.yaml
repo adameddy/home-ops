@@ -23,7 +23,6 @@ spec:
               TZ: ${TIMEZONE}
               DNSPORT: &dnsPort 53
 
-
             probes:
               liveness: &probes
                 enabled: true
