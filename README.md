@@ -69,14 +69,16 @@ This repository is my home Kubernetes cluster in a declarative state. [Terraform
 - [Prowlarr]() - Index management
 - 🚧 [Huntarr]() - Media updater
 - [Navidrome]() - Audio streaming
+- [Calibre-Web-Automated]() - Book Management
+- [Shelfmark]() - Book Requester
 
 #### Home
 
 - [Home Assistant]() - Home automation dashboard
-- 🚧 [Frigate]() - Security camera NVR
+- [Frigate]() - Security camera NVR
 - 🚧 [Mosquitto]() - MQTT broker
 - 🚧 [NodeRed]() - Automation builder
-- 🚧 [Z-Wave-JS-UI]() - Z-Wave device management
+- [Z-Wave-JS-UI]() - Z-Wave device management
 
 #### Monitoring
 
