@@ -86,6 +86,12 @@
         siteMonitor: http://zwave-js-ui.home.svc.cluster.local:8091
         statusStyle: "dot"
 - Utilities:
+  - IT-Tools:
+      href: https://it-tools.${DOMAIN}
+      icon: it-tools.png
+      description: Handy developer tools
+      siteMonitor: http://it-tools.web.svc.cluster.local:8080
+      statusStyle: "dot"
   - SABnzbd:
       href: https://sabnzbd.ravenholm.io
       icon: sabnzbd.png
