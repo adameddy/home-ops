@@ -2,104 +2,104 @@
 - Media:
   - Jellyfin:
       icon: jellyfin.png
-      href: https://jellyfin.ravenholm.io
+      href: https://jellyfin.${DOMAIN}
       description: Movie & TV Show Streaming
       siteMonitor: http://jellyfin.media.svc.cluster.local:8096
       statusStyle: "dot"
   - Navidrome:
       icon: navidrome.png
-      href: https://navidrome.ravenholm.io
+      href: https://navidrome.${DOMAIN}
       description: Audio Streaming
       siteMonitor: http://navidrome.media.svc.cluster.local:8080
       statusStyle: "dot"
   - Radarr:
       icon: radarr.png
-      href: https://radarr.ravenholm.io
+      href: https://radarr.${DOMAIN}
       description: Movie Management
       siteMonitor: http://radarr.media.svc.cluster.local:7878
       statusStyle: "dot"
   - Sonarr:
       icon: sonarr.png
-      href: https://sonarr.ravenholm.io
+      href: https://sonarr.${DOMAIN}
       description: TV Show Management
       siteMonitor: http://sonarr.media.svc.cluster.local:8989
       statusStyle: "dot"
   # - Lidarr:
   #     icon: lidarr.png
-  #     href: https://lidarr.ravenholm.io
+  #     href: https://lidarr.${DOMAIN}
   #     description: Audio Management
   #     siteMonitor: http://lidarr.media.svc.cluster.local:8686
   #     statusStyle: "dot"
   - Prowlarr:
       icon: prowlarr.png
-      href: https://prowlarr.ravenholm.io
+      href: https://prowlarr.${DOMAIN}
       description: Index Management
       siteMonitor: http://prowlarr.media.svc.cluster.local:9696
       statusStyle: "dot"
   - Jellyseerr:
       icon: jellyseerr.png
-      href: https://jellyseerr.ravenholm.io
+      href: https://jellyseerr.${DOMAIN}
       description: Movie & TV Show Requester
       siteMonitor: http://jellyseerr.media.svc.cluster.local:5055
       statusStyle: "dot"
   - Calibre-Web-Automated:
       icon: calibre-web.png
-      href: https://calibre-web-automated.ravenholm.io
+      href: https://calibre-web-automated.${DOMAIN}
       description: Book Management
       siteMonitor: http://calibre-web-automated.media.svc.cluster.local:8083
       statusStyle: "dot"
   - Shelfmark:
       icon: booklogr.png
-      href: https://shelfmark.ravenholm.io
+      href: https://shelfmark.${DOMAIN}
       description: Book Downloader
       siteMonitor: http://shelfmark.media.svc.cluster.local:8084
       statusStyle: "dot"
   # - Huntarr:
   #     icon: huntarr.png
-  #     href: https://huntarr.ravenholm.io
+  #     href: https://huntarr.${DOMAIN}
   #     description: Media Updater
   #     siteMonitor: http://huntarr.media.svc.cluster.local:9705
   #     statusStyle: "dot"
 - Home:
   - Home Assistant:
         icon: home-assistant.png
-        href: https://home-assistant.ravenholm.io
+        href: https://home-assistant.${DOMAIN}
         description: Home Automation
         siteMonitor: http://home-assistant.home.svc.cluster.local:8123
         statusStyle: "dot"
   - Node-Red:
         icon: node-red.png
-        href: https://node-red.ravenholm.io
+        href: https://node-red.${DOMAIN}
         description: Event Triggers
         siteMonitor: http://node-red.home.svc.cluster.local:1880
         statusStyle: "dot"
   - Frigate:
         icon: frigate.png
-        href: https://frigate.ravenholm.io
+        href: https://frigate.${DOMAIN}
         description: Security Camera NVR
         siteMonitor: http://frigate.home.svc.cluster.local:5000
         statusStyle: "dot"
   - Z-Wave JS UI:
         icon: z-wave-js-ui.png
-        href: https://zwave-js-ui.ravenholm.io
+        href: https://zwave-js-ui.${DOMAIN}
         description: Z-Wave Device Management
         siteMonitor: http://zwave-js-ui.home.svc.cluster.local:8091
         statusStyle: "dot"
 - Utilities:
   - IT-Tools:
       href: https://it-tools.${DOMAIN}
-      icon: it-tools.png
+      icon: it-tools-light.png
       description: Handy developer tools
       siteMonitor: http://it-tools.web.svc.cluster.local:8080
       statusStyle: "dot"
   - SABnzbd:
-      href: https://sabnzbd.ravenholm.io
+      href: https://sabnzbd.${DOMAIN}
       icon: sabnzbd.png
       description: Usenet Downloader
       siteMonitor: http://sabnzbd.media.svc.cluster.local:8080
       statusStyle: "dot"
   - MeTube:
-      href: https://metube.ravenholm.io
+      href: https://metube.${DOMAIN}
       icon: metube.png
       description: YouTube Downloader
       siteMonitor: http://metube.media.svc.cluster.local:8081
@@ -114,7 +114,7 @@
       icon: truenas.png
       description: General Storage
   - Longhorn:
-      href: https://longhorn.ravenholm.io
+      href: https://longhorn.${DOMAIN}
       icon: longhorn.png
       description: Cluster Storage
       siteMonitor: http://longhorn-frontend.longhorn-system.svc.cluster.local:80
