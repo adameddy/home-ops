@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - bjw-s.yaml
   - cilium.yaml
+  - grafana.yaml
   - intel-charts.yaml
   - jetstack.yaml
   - longhorn.yaml
