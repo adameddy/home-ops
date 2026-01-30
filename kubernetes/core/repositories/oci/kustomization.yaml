@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - alloy.yaml
   - app-template.yaml
+  - kube-prometheus-stack.yaml
