@@ -44,3 +44,12 @@ spec:
             uid: loki
             access: proxy
             url: http://loki-headless.observability.svc.cluster.local:3100
+    route:
+      main:
+        enabled: true
+        hostnames:
+          - "grafana.${DOMAIN}"
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https
