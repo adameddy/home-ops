@@ -89,8 +89,14 @@
   - IT-Tools:
       href: https://it-tools.${DOMAIN}
       icon: it-tools-light.png
-      description: Handy developer tools
+      description: Handy Developer Tools
       siteMonitor: http://it-tools.web.svc.cluster.local:8080
+      statusStyle: "dot"
+  - Grafana:
+      href: https://grafana.${DOMAIN}
+      icon: grafana.png
+      description: Logging and Metrics
+      siteMonitor: http://grafana.observability.svc.cluster.local:80
       statusStyle: "dot"
   - SABnzbd:
       href: https://sabnzbd.${DOMAIN}
