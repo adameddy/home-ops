@@ -54,7 +54,7 @@ spec:
       nodeSelector:
         intel.feature.node.kubernetes.io/gpu: "true"
       securityContext:
-        runAsNonRoot: true
+        runAsNonRoot: false
         runAsUser: 0
         runAsGroup: 0
         fsGroup: 1000
