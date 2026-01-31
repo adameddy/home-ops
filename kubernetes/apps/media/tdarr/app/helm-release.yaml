@@ -40,7 +40,7 @@ spec:
 
             securityContext:
               allowPrivilegeEscalation: true
-              readOnlyRootFilesystem: true
+              readOnlyRootFilesystem: false
               capabilities: {drop: ["ALL"]}
 
             resources:
@@ -61,6 +61,7 @@ spec:
         fsGroupChangePolicy: OnRootMismatch
         # 44 = video, 105 = kvm, 109 = render (for GPU access), 10000 = media
         supplementalGroups: [44, 105, 109, 10000]
+        seccompProfile: { type: RuntimeDefault }
 
     service:
       app:
