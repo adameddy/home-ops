@@ -39,9 +39,9 @@ spec:
               readiness: *probes
 
             securityContext:
-              allowPrivilegeEscalation: true
+              allowPrivilegeEscalation: false
               readOnlyRootFilesystem: false
-              capabilities: {drop: ["ALL"]}
+              #capabilities: {drop: ["ALL"]}
 
             resources:
               requests:
@@ -55,8 +55,8 @@ spec:
         intel.feature.node.kubernetes.io/gpu: "true"
       securityContext:
         runAsNonRoot: true
-        runAsUser: 1000
-        runAsGroup: 1000
+        runAsUser: 0
+        runAsGroup: 0
         fsGroup: 1000
         fsGroupChangePolicy: OnRootMismatch
         # 44 = video, 105 = kvm, 109 = render (for GPU access), 10000 = media
