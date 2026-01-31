@@ -58,6 +58,7 @@ This repository is my home Kubernetes cluster in a declarative state. [Terraform
 
 - [Cilium]() - Cluster networking solution
 - [Cloudflare DDNS]() - DNS record updater
+- [Blocky]() - DNS level ad-blocking
 
 #### Media
 
@@ -71,24 +72,27 @@ This repository is my home Kubernetes cluster in a declarative state. [Terraform
 - [Navidrome]() - Audio streaming
 - [Calibre-Web-Automated]() - Book Management
 - [Shelfmark]() - Book Requester
+- [Recyclarr]() - Profile setter for Sonarr & Radarr
 
 #### Home
 
 - [Home Assistant]() - Home automation dashboard
 - [Frigate]() - Security camera NVR
 - 🚧 [Mosquitto]() - MQTT broker
-- 🚧 [NodeRed]() - Automation builder
+- [NodeRed]() - Automation builder
 - [Z-Wave-JS-UI]() - Z-Wave device management
 
-#### Monitoring
+#### Observability
 
-- 🚧 [Grafana]() - Metrics and logging
+- [Grafana]() - Metrics and logging
 
 #### AI
 
 - 🚧 [Openwebui]() - AI Frontend
 
-#### Misc
+#### Utilities
 
 - [SABnzbd]() - Usenet download client
+- [MeTube]() - YouTube downloader
+- [IT-Tools]() - Handy developer tools
 - [Homepage]() - Home lab dashboard
