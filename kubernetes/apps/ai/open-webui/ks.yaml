@@ -6,7 +6,7 @@ metadata:
   name: &app open-webui
   namespace: flux-system
 spec:
-  targetNamespace: media
+  targetNamespace: ai
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
