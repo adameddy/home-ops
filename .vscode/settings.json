@@ -20,6 +20,7 @@
     "editor.defaultFormatter": "opentofu.vscode-opentofu",
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
-      "source.formatAll.opentofu": true
+      "source.formatAll.opentofu": "explicit"
     },
   }
+}
