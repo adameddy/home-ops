@@ -23,6 +23,10 @@ spec:
               TZ: ${TIMEZONE}
               PORT: &port 8080
 
+            envFrom:
+              - secretRef:
+                  name: open-webui-secrets
+
             probes:
               liveness: &probes
                 enabled: true
