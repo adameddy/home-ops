@@ -67,6 +67,12 @@
         description: Home Automation
         siteMonitor: http://home-assistant.home.svc.cluster.local:8123
         statusStyle: "dot"
+  - Mealie:
+        icon: mealie.png
+        href: https://mealie.${DOMAIN}
+        description: Recipes and Meal Planning
+        siteMonitor: http://mealie.home.svc.cluster.local:9000
+        statusStyle: "dot"
   - Node-Red:
         icon: node-red.png
         href: https://node-red.${DOMAIN}
