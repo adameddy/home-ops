@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   - ./frigate/ks.yaml
   - ./home-assistant/ks.yaml
+  - ./mealie/ks.yaml
   - ./node-red/ks.yaml
   - ./zwave-js-ui/ks.yaml
