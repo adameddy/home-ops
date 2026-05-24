@@ -17,7 +17,7 @@ spec:
           app:
             image:
               repository: ghcr.io/0xerr0r/blocky
-              tag: v0.28.2@sha256:5f84a54e4ee950c4ab21db905b7497476ece2f4e1a376d23ab8c4855cabddcba
+              tag: v0.30.0@sha256:d9f15eddffedded40797406349012cbd5966ef99c286b13321e7a76efddb9bdc
 
             env:
               TZ: ${TIMEZONE}
