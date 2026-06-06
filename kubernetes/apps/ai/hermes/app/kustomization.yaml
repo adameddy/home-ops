@@ -8,6 +8,6 @@ resources:
   - ./secret.sops.yaml
 configMapGenerator:
   - name: hermes-configmap
-    namespace: home
+    namespace: ai
     files:
       - config.yaml=./resources/config.yaml
