@@ -6,3 +6,8 @@ resources:
   - ./helm-release.yaml
   - ./pvc.yaml
   - ./secret.sops.yaml
+configMapGenerator:
+  - name: hermes-configmap
+    namespace: home
+    files:
+      - config.yaml=./config/config.yaml
