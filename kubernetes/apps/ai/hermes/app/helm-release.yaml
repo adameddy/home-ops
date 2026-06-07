@@ -118,8 +118,8 @@ spec:
         hostnames: ["{{ .Release.Name }}.${DOMAIN}"]
         rules:
           - backendRefs:
-              - name: *app
-                port: *port
+              - name: dashboard
+                port: 9119
 
     persistence:
       data:
