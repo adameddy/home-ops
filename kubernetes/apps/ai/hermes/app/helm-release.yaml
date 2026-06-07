@@ -118,7 +118,7 @@ spec:
         hostnames: ["{{ .Release.Name }}.${DOMAIN}"]
         rules:
           - backendRefs:
-              - name: dashboard
+              - name: hermes-dashboard
                 port: 9119
 
     persistence:
