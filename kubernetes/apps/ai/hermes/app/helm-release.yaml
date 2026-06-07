@@ -119,7 +119,7 @@ spec:
         rules:
           - backendRefs:
               - name: dashboard
-                port: http
+                port: 9119
 
     persistence:
       data:
