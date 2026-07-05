@@ -21,9 +21,9 @@ spec:
 
             env:
               TZ: ${TIMEZONE}
-              DOMAINS: vpn.${PRIVATE_DOMAIN}, ${PUBLIC_DOMAIN}
+              DOMAINS: "vpn.${PRIVATE_DOMAIN},${PUBLIC_DOMAIN}"
               IP6_PROVIDER: none
-              PROXIED: is(${PUBLIC_DOMAIN})
+              PROXIED: "is(${PUBLIC_DOMAIN})"
 
             envFrom:
               - secretRef:
