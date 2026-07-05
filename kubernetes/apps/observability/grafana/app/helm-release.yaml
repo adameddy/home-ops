@@ -48,7 +48,7 @@ spec:
       main:
         enabled: true
         hostnames:
-          - "grafana.${DOMAIN}"
+          - "grafana.${PRIVATE_DOMAIN}"
         parentRefs:
           - name: internal
             namespace: kube-system

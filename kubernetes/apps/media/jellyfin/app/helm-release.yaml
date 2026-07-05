@@ -60,7 +60,7 @@ spec:
             securityContext:
               allowPrivilegeEscalation: false
               readOnlyRootFilesystem: true
-              capabilities: {drop: ["ALL"]}
+              capabilities: { drop: ["ALL"] }
             resources:
               requests:
                 gpu.intel.com/i915: 1
@@ -78,7 +78,7 @@ spec:
             port: *port
     route:
       app:
-        hostnames: ["jellyfin.${DOMAIN}"]
+        hostnames: ["jellyfin.${PRIVATE_DOMAIN}"]
         parentRefs:
           - name: internal
             namespace: kube-system

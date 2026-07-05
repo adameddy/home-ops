@@ -50,7 +50,7 @@ spec:
             securityContext:
               allowPrivilegeEscalation: false
               readOnlyRootFilesystem: false
-              capabilities: {drop: ["ALL"]}
+              capabilities: { drop: ["ALL"] }
 
             resources:
               requests:
@@ -81,7 +81,7 @@ spec:
           - name: internal
             namespace: kube-system
             sectionName: https
-        hostnames: ["{{ .Release.Name }}.${DOMAIN}"]
+        hostnames: ["{{ .Release.Name }}.${PRIVATE_DOMAIN}"]
         rules:
           - backendRefs:
               - name: *app

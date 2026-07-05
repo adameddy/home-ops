@@ -70,7 +70,7 @@ spec:
         main:
           enabled: true
           hostnames:
-            - prometheus.${DOMAIN}
+            - prometheus.${PRIVATE_DOMAIN}
           parentRefs:
             - name: internal
               namespace: kube-system
