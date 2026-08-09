@@ -24,12 +24,6 @@
             description: TV Show Management
             siteMonitor: http://sonarr.media.svc.cluster.local:8989
             statusStyle: "dot"
-      # - Lidarr:
-      #     icon: lidarr.png
-      #     href: https://lidarr.${PRIVATE_DOMAIN}
-      #     description: Audio Management
-      #     siteMonitor: http://lidarr.media.svc.cluster.local:8686
-      #     statusStyle: "dot"
       - Prowlarr:
             icon: prowlarr.png
             href: https://prowlarr.${PRIVATE_DOMAIN}
@@ -54,12 +48,6 @@
             description: Book Downloader
             siteMonitor: http://shelfmark.media.svc.cluster.local:8084
             statusStyle: "dot"
-  # - Huntarr:
-  #     icon: huntarr.png
-  #     href: https://huntarr.${PRIVATE_DOMAIN}
-  #     description: Media Updater
-  #     siteMonitor: http://huntarr.media.svc.cluster.local:9705
-  #     statusStyle: "dot"
 - Home:
       - Home Assistant:
             icon: home-assistant.png
@@ -115,6 +103,12 @@
             icon: metube.png
             description: YouTube Downloader
             siteMonitor: http://metube.media.svc.cluster.local:8081
+            statusStyle: "dot"
+      - Open-WebUI:
+            href: https://open-webui.${PRIVATE_DOMAIN}
+            icon: open-webui.png
+            description: AI Chat
+            siteMonitor: http://open-webui.ai.svc.cluster.local:8080
             statusStyle: "dot"
 - Infrastructure:
       - Proxmox:
