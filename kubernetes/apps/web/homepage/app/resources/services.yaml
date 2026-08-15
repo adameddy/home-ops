@@ -31,10 +31,10 @@
             siteMonitor: http://prowlarr.media.svc.cluster.local:9696
             statusStyle: "dot"
       - Seerr:
-            icon: Seerr.png
-            href: https://Seerr.${PRIVATE_DOMAIN}
+            icon: seerr.png
+            href: https://seerr.${PRIVATE_DOMAIN}
             description: Movie & TV Show Requester
-            siteMonitor: http://Seerr.media.svc.cluster.local:5055
+            siteMonitor: http://seerr.media.svc.cluster.local:80
             statusStyle: "dot"
       - Calibre-Web-Automated:
             icon: calibre-web.png
