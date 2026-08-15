@@ -6,4 +6,5 @@ resources:
   - ./home-assistant/ks.yaml
   - ./mealie/ks.yaml
   - ./node-red/ks.yaml
+  - ./n8n/ks.yaml
   - ./zwave-js-ui/ks.yaml
