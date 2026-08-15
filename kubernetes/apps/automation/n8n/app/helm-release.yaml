@@ -93,3 +93,11 @@ spec:
           n8n:
             app:
               - path: /home/node/.n8n
+      cache:
+        type: emptyDir
+        globalMounts:
+          - path: /home/node/.cache
+      tmp:
+        type: emptyDir
+        globalMounts:
+          - path: /tmp
