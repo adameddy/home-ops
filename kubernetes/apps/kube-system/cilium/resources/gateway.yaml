@@ -24,7 +24,7 @@ spec:
       tls:
         certificateRefs:
           - kind: Secret
-            name: ${DOMAIN/./-}-production-tls
+            name: ${PRIVATE_DOMAIN/./-}-production-tls
 ---
 # TODO
 apiVersion: gateway.networking.k8s.io/v1
