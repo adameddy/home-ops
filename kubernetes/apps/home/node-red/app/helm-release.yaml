@@ -17,7 +17,7 @@ spec:
           app:
             image:
               repository: ghcr.io/node-red/node-red
-              tag: 4.1.3@sha256:41d0985765046e18be11ccc18e839d3d4c09ba122a85ebec96aaa8f77bae0384
+              tag: 5.0.4@sha256:10f40d0a83e7e5852b13d4d472b2006b05b1cca6d55e2f29a55a12c25a630cb6
 
             env:
               TZ: ${TIMEZONE}
