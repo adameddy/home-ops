@@ -3,14 +3,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app node-red
+  name: &app n8n
   namespace: flux-system
 spec:
-  targetNamespace: home
+  targetNamespace: automation
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/home/node-red/app/
+  path: ./kubernetes/apps/automation/n8n/app/
   sourceRef:
     kind: GitRepository
     name: flux-system
