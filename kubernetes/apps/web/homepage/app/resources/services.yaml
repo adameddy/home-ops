@@ -61,12 +61,6 @@
             description: Recipes and Meal Planning
             siteMonitor: http://mealie.home.svc.cluster.local:9000
             statusStyle: "dot"
-      - Node-Red:
-            icon: node-red.png
-            href: https://node-red.${PRIVATE_DOMAIN}
-            description: Event Triggers
-            siteMonitor: http://node-red.home.svc.cluster.local:1880
-            statusStyle: "dot"
       - Frigate:
             icon: frigate.png
             href: https://frigate.${PRIVATE_DOMAIN}
@@ -109,6 +103,18 @@
             icon: open-webui.png
             description: AI Chat
             siteMonitor: http://open-webui.ai.svc.cluster.local:8080
+            statusStyle: "dot"
+      - Node-Red:
+            icon: node-red.png
+            href: https://node-red.${PRIVATE_DOMAIN}
+            description: Event Triggers
+            siteMonitor: http://node-red.automation.svc.cluster.local:1880
+            statusStyle: "dot"
+      - n8n:
+            icon: n8n.png
+            href: https://n8n.${PRIVATE_DOMAIN}
+            description: Workflow Automation Platform
+            siteMonitor: http://n8n.automation.svc.cluster.local:8080
             statusStyle: "dot"
 - Infrastructure:
       - Proxmox:
