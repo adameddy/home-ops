@@ -12,7 +12,7 @@ locals {
       memory      = 6 * 1024
       cores       = 2
       disk_size   = 10
-      image       = "talos-1.12.0-nocloud-amd64.img"
+      image       = "talos-1.13.0-nocloud-amd64.img"
     },
     {
       name        = "talos-controller-02"
@@ -22,7 +22,7 @@ locals {
       memory      = 6 * 1024
       cores       = 2
       disk_size   = 10
-      image       = "talos-1.12.0-nocloud-amd64.img"
+      image       = "talos-1.13.0-nocloud-amd64.img"
     },
     {
       name        = "talos-controller-03"
@@ -32,7 +32,7 @@ locals {
       memory      = 6 * 1024
       cores       = 2
       disk_size   = 10
-      image       = "talos-1.12.0-nocloud-amd64.img"
+      image       = "talos-1.13.0-nocloud-amd64.img"
     }
   ]
 
@@ -43,10 +43,10 @@ locals {
       target_node       = "pve-prod-1"
       vm_id             = 171
       ip_address        = "10.0.0.171"
-      memory            = 24 * 1024
+      memory            = 16 * 1024
       cores             = 12
       disk_size         = 200
-      image             = "talos-1.12.0-nocloud-amd64.img"
+      image             = "talos-1.13.0-nocloud-amd64.img"
       add_longhorn_disk = true
       hostpci_devices   = [
         {
@@ -64,10 +64,10 @@ locals {
       target_node       = "pve-prod-2"
       vm_id             = 172
       ip_address        = "10.0.0.172"
-      memory            = 24 * 1024
+      memory            = 16 * 1024
       cores             = 12
       disk_size         = 200
-      image             = "talos-1.12.0-nocloud-amd64.img"
+      image             = "talos-1.13.0-nocloud-amd64.img"
       add_longhorn_disk = true
       hostpci_devices   = [
         {
@@ -81,10 +81,10 @@ locals {
       target_node       = "pve-prod-3"
       vm_id             = 173
       ip_address        = "10.0.0.173"
-      memory            = 24 * 1024
+      memory            = 16 * 1024
       cores             = 12
       disk_size         = 200
-      image             = "talos-1.12.0-nocloud-amd64.img"
+      image             = "talos-1.13.0-nocloud-amd64.img"
       add_longhorn_disk = true
       hostpci_devices = [
         {

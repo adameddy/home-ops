@@ -3,6 +3,7 @@
 ## common commands
 
 $ tofu init
+$ tofu plan
 $ tofu apply
 $ tofu destroy
 $ tofu output -raw kubeconfig
@@ -11,7 +12,11 @@ $ talosctl dashboard --nodes 10.0.0.161
 
 ## upgrade talos
 
-important note: currently this nukes any longhorn volume attached to the vm
+### important note: 
+
+currently this nukes any longhorn volume attached to the vm.
+on upgrade the uuid of the volume changes.  the old volume will need to be removed and the new one added. for now just do this through the longhorn ui.
+give time in-between node upgrades so the new volumes have time to sync with the old volumes.
 
 1. change the version in the variables file
 2. pull new image (tofu apply)
