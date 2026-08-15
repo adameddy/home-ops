@@ -30,11 +30,11 @@
             description: Index Management
             siteMonitor: http://prowlarr.media.svc.cluster.local:9696
             statusStyle: "dot"
-      - Jellyseerr:
-            icon: jellyseerr.png
-            href: https://jellyseerr.${PRIVATE_DOMAIN}
+      - Seerr:
+            icon: Seerr.png
+            href: https://Seerr.${PRIVATE_DOMAIN}
             description: Movie & TV Show Requester
-            siteMonitor: http://jellyseerr.media.svc.cluster.local:5055
+            siteMonitor: http://Seerr.media.svc.cluster.local:5055
             statusStyle: "dot"
       - Calibre-Web-Automated:
             icon: calibre-web.png

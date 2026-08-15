@@ -63,7 +63,7 @@ This repository is my home Kubernetes cluster in a declarative state. [Terraform
 #### Media
 
 - [Jellyfin]() - Movie & TV Show streaming
-- [Jellyseerr]() - Movie & TV Show requester
+- [Seerr]() - Movie & TV Show requester
 - [Sonarr]() - TV Show management
 - [Radarr]() - Movie management
 - 🚧 [Lidarr]() - Audio management
