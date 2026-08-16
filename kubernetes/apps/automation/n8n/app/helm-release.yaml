@@ -21,7 +21,7 @@ spec:
 
             env:
               TZ: ${TIMEZONE}
-              GENERIC_TIMEZONE: "${TIMEZONE}"
+              GENERIC_TIMEZONE: ${TIMEZONE}
               DB_SQLITE_VACUUM_ON_STARTUP: true
               EXECUTIONS_DATA_PRUNE: true
               EXECUTIONS_DATA_MAX_AGE: 7
