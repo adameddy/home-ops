@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -6,3 +7,39 @@ metadata:
 spec:
   type: ExternalName
   externalName: 10.0.0.189
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8818
+      protocol: TCP
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: comfy-service-ingress
+  namespace: ai
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    kubernetes.io/ingress.class: cilium
+    cilium.io/ingress-proxy-protocol: "off"
+    
+spec:
+  ingressClassName: cilium
+  
+  tls:
+    - hosts:
+        - "comfy.${PRIVATE_DOMAIN}"
+      secretName: comfy-tls
+  
+  rules:
+    - host: comfy.${PRIVATE_DOMAIN}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: comfy-service
+                port:
+                  number: 80
