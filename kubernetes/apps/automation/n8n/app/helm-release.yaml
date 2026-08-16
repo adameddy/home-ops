@@ -30,7 +30,7 @@ spec:
               N8N_PROTOCOL: "https"
               N8N_PORT: &port 8080
               N8N_HOST: "{{ .Release.Name }}.${PRIVATE_DOMAIN}"
-              WEBHOOK_URL: "{{ .Release.Name }}.${PRIVATE_DOMAIN}"
+              WEBHOOK_URL: "https://{{ .Release.Name }}.${PRIVATE_DOMAIN}"
               N8N_LOG_LEVEL: info
               N8N_LOG_OUTPUT: console
               N8N_TRUST_PROXY: true
