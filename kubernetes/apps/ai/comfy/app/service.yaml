@@ -28,7 +28,7 @@ spec:
   tls:
     - hosts:
         - "comfy.${PRIVATE_DOMAIN}"
-      secretName: comfy-tls
+      secretName: "${PRIVATE_DOMAIN/./-}-production-tls"
   rules:
     - host: comfy.${PRIVATE_DOMAIN}
       http:
