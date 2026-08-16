@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: comfy
+  name: comfy-service
   namespace: ai
 spec:
   type: ExternalName
@@ -22,16 +22,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     kubernetes.io/ingress.class: cilium
-    cilium.io/ingress-proxy-protocol: "off"
-    
+    cilium.io/ingress-proxy-protocol: "off"   
 spec:
   ingressClassName: cilium
-  
   tls:
     - hosts:
         - "comfy.${PRIVATE_DOMAIN}"
       secretName: comfy-tls
-  
   rules:
     - host: comfy.${PRIVATE_DOMAIN}
       http:
