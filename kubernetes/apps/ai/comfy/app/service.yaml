@@ -5,4 +5,4 @@ metadata:
   namespace: ai
 spec:
   type: ExternalName
-  externalName: "comfy.${PRIVATE_DOMAIN}"
+  externalName: 10.0.0.189
