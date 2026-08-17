@@ -47,22 +47,14 @@ metadata:
   namespace: ai
 spec:
   parentRefs:
-    - name: comfy
+    - name: internal
   hostnames:
     - comfy.${PRIVATE_DOMAIN}
   rules:
     - matches:
         - path:
             type: PathPrefix
-            value: /api
-      backendRefs:
-        - name: comfy-api-service
-          port: 8188
-
-    - matches:
-        - path:
-            type: PathPrefix
             value: /
       backendRefs:
-        - name: comfy-frontend
+        - name: comfy
           port: 80
