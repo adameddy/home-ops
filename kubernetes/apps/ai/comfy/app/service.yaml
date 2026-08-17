@@ -1,60 +1,19 @@
----
 apiVersion: v1
 kind: Service
 metadata:
   name: comfy
 spec:
-  type: ExternalName
-  externalName: 10.0.0.189
   ports:
-    - name: http
+    - protocol: TCP
       port: 80
-      targetPort: 8818
-      protocol: TCP
-
+      targetPort: 8188
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: v1
+kind: Endpoints
 metadata:
   name: comfy
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
-    kubernetes.io/ingress.class: cilium
-    cilium.io/ingress-proxy-protocol: "off"   
-spec:
-  ingressClassName: cilium
-  tls:
-    - hosts:
-        - "comfy.${PRIVATE_DOMAIN}"
-      secretName: "${PRIVATE_DOMAIN/./-}-production"
-  rules:
-    - host: comfy.${PRIVATE_DOMAIN}
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: comfy
-                port:
-                  number: 80
-
----
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: comfy
-  namespace: ai
-spec:
-  parentRefs:
-    - name: internal
-  hostnames:
-    - comfy.${PRIVATE_DOMAIN}
-  rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: /
-      backendRefs:
-        - name: comfy
-          port: 80
+subsets:
+  - addresses:
+      - ip: 10.0.0.189
+    ports:
+      - port: 80
