@@ -7,7 +7,9 @@ spec:
   type: LoadBalancer
   loadBalancerIP: 10.0.0.189
   ports:
-    - port: 80
+    - name: http
+      protocol: TCP
+      port: 80
       targetPort: 8188
   selector: {}
 ---
