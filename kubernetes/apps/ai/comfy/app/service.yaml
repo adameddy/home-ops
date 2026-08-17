@@ -16,6 +16,7 @@ kind: Ingress
 metadata:
   name: external-proxy-ingress
 spec:
+  ingressClassName: cilium
   rules:
     - host: "comfy.${PRIVATE_DOMAIN}"
       http:
