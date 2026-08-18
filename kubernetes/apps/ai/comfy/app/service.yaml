@@ -13,6 +13,16 @@ spec:
       targetPort: 8188
   selector: {}
 ---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: comfy
+subsets:
+  - addresses:
+      - ip: 10.0.0.189
+    ports:
+      - port: 8188
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
