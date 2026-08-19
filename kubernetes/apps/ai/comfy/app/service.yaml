@@ -6,7 +6,7 @@ metadata:
 spec:
   ports:
   - name: https
-    port: 80
+    port: 8188
     targetPort: 8188
 ---
 apiVersion: discovery.k8s.io/v1
@@ -20,7 +20,7 @@ ports:
   - name: ''
     appProtocol: http
     protocol: TCP
-    port: 80
+    port: 8188
 endpoints:
   - addresses:
       - "10.0.0.189"
