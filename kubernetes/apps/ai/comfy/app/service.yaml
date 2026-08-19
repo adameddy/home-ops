@@ -4,8 +4,6 @@ kind: Service
 metadata:
   name: comfy
 spec:
-  type: LoadBalancer
-  loadBalancerIP: 10.0.0.189
   ports:
     - name: http
       protocol: TCP
@@ -30,13 +28,13 @@ metadata:
 spec:
   ingressClassName: cilium
   rules:
-    - host: "comfy.${PRIVATE_DOMAIN}"
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: comfy
-                port:
-                  number: 80
+  - host: "comfy.${PRIVATE_DOMAIN}"
+    http:
+      paths:
+      - backend:
+          service:
+            name: comfy
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
