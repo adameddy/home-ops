@@ -24,9 +24,15 @@ subsets:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
   name: external-proxy-ingress
 spec:
-  ingressClassName: cilium
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - "comfy.${PRIVATE_DOMAIN}"
+    secretName: tls-dev-com
   rules:
   - host: "comfy.${PRIVATE_DOMAIN}"
     http:
