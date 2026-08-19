@@ -5,42 +5,21 @@ metadata:
   name: comfy
 spec:
   ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 8188
+  - name: app
+    port: 80
+    protocol: TCP
+    targetPort: 8188
+  clusterIP: None
+  type: ClusterIP
 ---
 apiVersion: v1
 kind: Endpoints
 metadata:
   name: comfy
 subsets:
-  - addresses:
-      - ip: 10.0.0.189
-    ports:
-      - name: http
-        port: 8188
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-  name: external-proxy-ingress
-spec:
-  ingressClassName: nginx
-  tls:
-  - hosts:
-    - "comfy.${PRIVATE_DOMAIN}"
-    secretName: tls-dev-com
-  rules:
-  - host: "comfy.${PRIVATE_DOMAIN}"
-    http:
-      paths:
-      - backend:
-          service:
-            name: comfy
-            port:
-              number: 80
-        path: /
-        pathType: ImplementationSpecific
+- addresses:
+  - ip: 10.0.0.189
+  ports:
+  - name: app
+    port: 8188
+    protocol: TCP
