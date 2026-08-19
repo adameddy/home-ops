@@ -36,7 +36,7 @@ spec:
   tls:
   - hosts:
     - "comfy.${PRIVATE_DOMAIN}"
-    secretName: tls-external-service
+    secretName: comfy-tls
   rules:
   - host: "comfy.${PRIVATE_DOMAIN}"
     http:
