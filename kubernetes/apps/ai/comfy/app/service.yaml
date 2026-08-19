@@ -17,7 +17,7 @@ metadata:
     kubernetes.io/service-name: comfy
 addressType: IPv4
 ports:
-  - name: ''
+  - name: http
     appProtocol: http
     protocol: TCP
     port: 8188
