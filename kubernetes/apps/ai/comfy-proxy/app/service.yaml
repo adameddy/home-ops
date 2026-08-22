@@ -3,11 +3,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: comfyui-backend
-  namespace: default
 spec:
   type: ExternalName
   externalName: 10.0.0.189
   ports:
   - name: http
     port: 8188
-    protocol: TCP
