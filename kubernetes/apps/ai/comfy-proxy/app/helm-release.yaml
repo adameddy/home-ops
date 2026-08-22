@@ -21,6 +21,7 @@ spec:
 
             env:
               TZ: ${TIMEZONE}
+              PORT: &port 80
 
             probes:
               liveness: &probes
