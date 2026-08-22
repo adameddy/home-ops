@@ -90,5 +90,5 @@ spec:
         advancedMounts:
           *app :
             app:
-              - path: /var/cache/nginx/client_temp
-                subPath: client_temp
+              - path: /var/cache/nginx
+                subPath: nginx
