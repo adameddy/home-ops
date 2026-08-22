@@ -7,6 +7,6 @@ resources:
 configMapGenerator:
   - name: comfy-proxy-config
     files:
-      - nginx.conf=./etc/nginx/nginx.conf
+      - nginx.conf=./config/nginx.conf
 generatorOptions:
   disableNameSuffixHash: true
