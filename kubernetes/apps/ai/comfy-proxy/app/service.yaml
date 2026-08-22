@@ -4,8 +4,8 @@ kind: Service
 metadata:
   name: comfyui-backend
 spec:
-  type: ClusterIp
-  clusterIp: None
+  type: ClusterIP
+  clusterIP: None
   ports:
     - name: http
       protocol: TCP
