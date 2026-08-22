@@ -17,4 +17,5 @@ spec:
         value: /
     backendRefs:
     - name: comfyui-backend
+      namespace: ai
       port: 8188
