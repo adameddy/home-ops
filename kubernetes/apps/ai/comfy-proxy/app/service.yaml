@@ -4,8 +4,19 @@ kind: Service
 metadata:
   name: comfyui-backend
 spec:
-  type: ExternalName
-  externalName: 10.0.0.189
   ports:
   - name: http
+    protocol: TCP
     port: 8188
+    targetPort: 8188
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: comfyui-backend
+subsets:
+  - addresses:
+      - ip: 10.0.0.189
+    ports:
+      - name: http
+        port: 8188
