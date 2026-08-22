@@ -4,11 +4,12 @@ kind: Service
 metadata:
   name: comfyui-backend
 spec:
+type: NodePort
   ports:
-  - name: http
-    protocol: TCP
-    port: 8188
-    targetPort: 8188
+    - name: http
+      protocol: TCP
+      port: 8188
+      targetPort: 8188
 ---
 apiVersion: v1
 kind: Endpoints
