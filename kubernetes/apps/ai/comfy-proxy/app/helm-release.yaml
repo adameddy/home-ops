@@ -85,3 +85,10 @@ spec:
           - path: /etc/nginx/nginx.conf
             subPath: nginx.conf
             readOnly: true
+      tmpfs:
+        type: emptyDir
+        advancedMounts:
+          *app :
+            app:
+              - path: /var/cache/nginx/client_temp
+                subPath: client_temp
