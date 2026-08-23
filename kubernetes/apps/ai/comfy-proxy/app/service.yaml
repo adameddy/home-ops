@@ -2,24 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: comfyui-backend
+  name: comfy-backend
 spec:
-  type: ClusterIP
-  ports:
-    - port: 8188
-      targetPort: 8188
----
-apiVersion: discovery.k8s.io/v1
-kind: EndpointSlice
-metadata:
-  name: comfyui-backend-1
-  labels:
-    kubernetes.io/service-name: comfyui-backend
-    endpointslice.kubernetes.io/managed-by: cluster-admins
-addressType: IPv4
-ports:
-  - protocol: TCP
-    port: 8188
-endpoints:
-  - addresses:
-      - "10.0.0.189"
+  type: ExternalName
+  externalName: google.com
