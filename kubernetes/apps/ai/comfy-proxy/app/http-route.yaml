@@ -18,4 +18,4 @@ spec:
     backendRefs:
     - name: comfy-backend
       namespace: ai
-      port: 8188
+      port: 80
