@@ -6,7 +6,7 @@ metadata:
   name: &app comfy-proxy
   namespace: flux-system
 spec:
-  targetNamespace: ai
+  targetNamespace: kube-system
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
