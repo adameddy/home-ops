@@ -74,6 +74,30 @@
             siteMonitor: http://zwave-js-ui.home.svc.cluster.local:8091
             statusStyle: "dot"
 - Utilities:
+      - Open-WebUI:
+            href: https://open-webui.${PRIVATE_DOMAIN}
+            icon: open-webui.png
+            description: AI Chat
+            siteMonitor: http://open-webui.ai.svc.cluster.local:8080
+            statusStyle: "dot"
+      - ComfyUI:
+            href: https://10.0.0.189:8188
+            icon: comfyui.png
+            description: AI Image Generation
+            siteMonitor: http://10.0.0.189:8188
+            statusStyle: "dot"
+      - n8n:
+            icon: n8n.png
+            href: https://n8n.${PRIVATE_DOMAIN}
+            description: Workflow Automation Platform
+            siteMonitor: http://n8n.automation.svc.cluster.local:8080
+            statusStyle: "dot"
+      - Node-Red:
+            icon: node-red.png
+            href: https://node-red.${PRIVATE_DOMAIN}
+            description: Event Triggers
+            siteMonitor: http://node-red.automation.svc.cluster.local:1880
+            statusStyle: "dot"
       - IT-Tools:
             href: https://it-tools.${PRIVATE_DOMAIN}
             icon: it-tools-light.png
@@ -97,24 +121,6 @@
             icon: metube.png
             description: YouTube Downloader
             siteMonitor: http://metube.media.svc.cluster.local:8081
-            statusStyle: "dot"
-      - Open-WebUI:
-            href: https://open-webui.${PRIVATE_DOMAIN}
-            icon: open-webui.png
-            description: AI Chat
-            siteMonitor: http://open-webui.ai.svc.cluster.local:8080
-            statusStyle: "dot"
-      - Node-Red:
-            icon: node-red.png
-            href: https://node-red.${PRIVATE_DOMAIN}
-            description: Event Triggers
-            siteMonitor: http://node-red.automation.svc.cluster.local:1880
-            statusStyle: "dot"
-      - n8n:
-            icon: n8n.png
-            href: https://n8n.${PRIVATE_DOMAIN}
-            description: Workflow Automation Platform
-            siteMonitor: http://n8n.automation.svc.cluster.local:8080
             statusStyle: "dot"
 - Infrastructure:
       - Proxmox:
