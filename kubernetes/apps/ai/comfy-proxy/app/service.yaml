@@ -15,7 +15,7 @@ metadata:
   name: comfyui-backend-1
   labels:
     kubernetes.io/service-name: comfyui-backend
-    endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+    endpointslice.kubernetes.io/managed-by: cluster-admins
 addressType: IPv4
 ports:
   - protocol: TCP
