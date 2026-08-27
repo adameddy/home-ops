@@ -81,7 +81,7 @@
             siteMonitor: http://open-webui.ai.svc.cluster.local:8080
             statusStyle: "dot"
       - ComfyUI:
-            href: https://10.0.0.189:8188
+            href: http://10.0.0.189:8188
             icon: comfyui.png
             description: AI Image Generation
             siteMonitor: http://10.0.0.189:8188
