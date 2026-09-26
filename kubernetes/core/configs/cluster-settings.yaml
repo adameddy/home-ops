@@ -16,3 +16,4 @@ data:
   TVSHOWS_PATH: "/mnt/zpool3/tv-shows"
   DOWNLOADS_PATH: "/mnt/zpool3/temp/downloads"
   NVR_PATH: "/mnt/zpool4/nvr"
+  LONGHORN_PATH: "/mnt/zpool3/longhorn"

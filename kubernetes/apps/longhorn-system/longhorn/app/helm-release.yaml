@@ -37,6 +37,7 @@ spec:
       createDefaultDiskLabeledNodes: true
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
       storageReservedPercentageForDefaultDisk: 2
+      backupTarget: nfs://${FS1_IP}:${LONGHORN_PATH}
     longhornUI:
       replicas: 1
     ingress:
