@@ -66,9 +66,7 @@ This repository is my home Kubernetes cluster in a declarative state. [Terraform
 - [Seerr]() - Movie & TV Show requester
 - [Sonarr]() - TV Show management
 - [Radarr]() - Movie management
-- 🚧 [Lidarr]() - Audio management
 - [Prowlarr]() - Index management
-- 🚧 [Huntarr]() - Media updater
 - [Navidrome]() - Audio streaming
 - [Calibre-Web-Automated]() - Book Management
 - [Shelfmark]() - Book Requester
@@ -78,7 +76,7 @@ This repository is my home Kubernetes cluster in a declarative state. [Terraform
 
 - [Home Assistant]() - Home automation dashboard
 - [Frigate]() - Security camera NVR
-- 🚧 [Mosquitto]() - MQTT broker
+- [Mealie]() - Meal planning
 - [NodeRed]() - Automation builder
 - [Z-Wave-JS-UI]() - Z-Wave device management
 
@@ -88,7 +86,7 @@ This repository is my home Kubernetes cluster in a declarative state. [Terraform
 
 #### AI
 
-- 🚧 [Openwebui]() - AI Frontend
+- [Openwebui]() - AI Frontend
 
 #### Utilities
 
